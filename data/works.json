@@ -32,5 +32,16 @@
     "memo": "ChatGPT・Claude・Geminiの3AIで同じテーマ（BPO事業のナレッジマネジメント高度化）についてディープリサーチを実施。3本のレポートをClaude Designに渡し、比較・読み解き用のHTMLサイトを作成してもらった。",
     "tags": ["Claude Design", "ディープリサーチ"],
     "published": true
+  },
+  {
+    "id": 4,
+    "type": "image",
+    "title": "離職防止",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-04",
+    "image": "images/generated/ChatGPT_rishokuboushi20260425.png",
+    "prompt": "",
+    "tags": ["画像生成", "work"],
+    "published": true
   }
 ]
