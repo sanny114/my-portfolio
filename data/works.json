@@ -2,24 +2,23 @@
   {
     "id": 1,
     "type": "image",
-    "title": "サンプル：AIで作ったロゴ",
-    "tool": "ChatGPT",
-    "date": "2026-03",
-    "image": "images/generated/sample-logo.png",
-    "prompt": "シンプルでモダンなAIコミュニティのロゴ。青と白を基調に、対話をイメージした丸いフォルム。",
-    "tags": ["画像生成", "実験"],
+    "title": "未来のあなた予測",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-04",
+    "image": "images/generated/ChatGPT_mirai-yosoku20260425.png",
+    "prompt": "①あなたが記録している過去の私とのチャットを分析して、5年後10年後20年後の私はどうなっているか、具体的かつ現実的に予測してください。\n②出力した内容について、グラレコ風のインフォグラフィックで作成してください。",
+    "tags": ["画像生成", "Career"],
     "published": true
   },
   {
     "id": 2,
-    "type": "html",
-    "title": "サンプル：セミナー告知ページ",
-    "tool": "Claude Code",
+    "type": "image",
+    "title": "CS調査送付先管理 導入手順書",
+    "tool": "ChatGPT (GPT-image-2)",
     "date": "2026-04",
-    "thumbnail": "images/thumbnails/sample-seminar.png",
-    "url": "https://sanny114.github.io/sample-seminar/",
-    "memo": "Peatixの告知文をベースに、Claude Codeでランディングページを自動生成。プロンプトは使わず、告知文をそのまま貼り付けて構成してもらった。",
-    "tags": ["Claude Code", "セミナー"],
+    "image": "images/generated/ChatGPT_CSImage20260425.png",
+    "prompt": "ChatGPTにSharePointを使ったCS調査送付先管理について相談している中で、整理のために画像化してもらったもの。特定のプロンプトはなし。",
+    "tags": ["画像生成", "work"],
     "published": true
   }
 ]
