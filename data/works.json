@@ -36,11 +36,11 @@
   {
     "id": 4,
     "type": "image",
-    "title": "離職防止",
+    "title": "新人プロジェクトリーダーの面談ログ蓄積フロー",
     "tool": "ChatGPT (GPT-image-2)",
     "date": "2026-04",
     "image": "images/generated/ChatGPT_rishokuboushi20260425.png",
-    "prompt": "",
+    "prompt": "新人プロジェクトリーダーの面談ログについてChatGPTとやりとりしたのちに「ここまで話したことを1枚の画像にインフォグラフィック形式でまとめてください」と依頼して作成。",
     "tags": ["画像生成", "work"],
     "published": true
   }
