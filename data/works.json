@@ -20,5 +20,17 @@
     "prompt": "ChatGPTにSharePointを使ったCS調査送付先管理について相談している中で、整理のために画像化してもらったもの。特定のプロンプトはなし。",
     "tags": ["画像生成", "work"],
     "published": true
+  },
+  {
+    "id": 3,
+    "type": "html",
+    "title": "ナレッジ精査活用 — 3AIディープリサーチ比較",
+    "tool": "Claude Design",
+    "date": "2026-04",
+    "thumbnail": "images/thumbnails/km-benchmark.png",
+    "url": "https://sanny114.github.io/km-benchmark-review/",
+    "memo": "ChatGPT・Claude・Geminiの3AIで同じテーマ（BPO事業のナレッジマネジメント高度化）についてディープリサーチを実施。3本のレポートをClaude Designに渡し、比較・読み解き用のHTMLサイトを作成してもらった。",
+    "tags": ["Claude Design", "ディープリサーチ"],
+    "published": true
   }
 ]
