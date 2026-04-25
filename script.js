@@ -1,7 +1,7 @@
 let allWorks = [];
 let allTags = [];
 let activeTag = null;
-let activeType = null;
+let activeType = '';
 
 async function loadData() {
   const [worksRes, tagsRes] = await Promise.all([
@@ -11,13 +11,38 @@ async function loadData() {
   allWorks = await worksRes.json();
   allTags = await tagsRes.json();
 
+  renderStats();
   renderTagButtons();
   renderGallery();
+}
+
+function renderStats() {
+  const published = allWorks.filter(w => w.published);
+  const images = published.filter(w => w.type === 'image').length;
+  const sites = published.filter(w => w.type === 'html').length;
+  const dates = published.map(w => w.date).sort().reverse();
+  const lastDate = dates[0] ? dates[0].replace('-', '.') : '—';
+
+  document.getElementById('stat-total').textContent = published.length;
+  document.getElementById('stat-images').textContent = images;
+  document.getElementById('stat-sites').textContent = sites;
+  document.getElementById('stat-date').textContent = lastDate;
 }
 
 function renderTagButtons() {
   const container = document.getElementById('tag-filters');
   container.innerHTML = '';
+
+  const allBtn = document.createElement('button');
+  allBtn.className = 'tag-btn active';
+  allBtn.textContent = 'All';
+  allBtn.addEventListener('click', () => {
+    activeTag = null;
+    document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+    allBtn.classList.add('active');
+    renderGallery();
+  });
+  container.appendChild(allBtn);
 
   allTags.forEach(tag => {
     const btn = document.createElement('button');
@@ -26,7 +51,11 @@ function renderTagButtons() {
     btn.addEventListener('click', () => {
       activeTag = activeTag === tag ? null : tag;
       document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-      if (activeTag) btn.classList.add('active');
+      if (activeTag) {
+        btn.classList.add('active');
+      } else {
+        allBtn.classList.add('active');
+      }
       renderGallery();
     });
     container.appendChild(btn);
@@ -44,97 +73,156 @@ function renderGallery() {
     return true;
   });
 
+  const countEl = document.getElementById('works-count');
+  countEl.textContent = `${filtered.length} entries`;
+
   if (filtered.length === 0) {
     gallery.innerHTML = '<p class="no-results">該当する作品がありません</p>';
     return;
   }
 
-  filtered.forEach(work => {
-    gallery.appendChild(createCard(work));
+  filtered.forEach((work, i) => {
+    gallery.appendChild(createCard(work, i + 1));
   });
 }
 
-function createCard(work) {
+function createCard(work, index) {
   const card = document.createElement('div');
   card.className = 'card';
 
-  const imageArea = document.createElement('div');
-  imageArea.className = 'card-image';
+  // Thumbnail
+  const thumb = document.createElement('div');
+  thumb.className = 'card-thumb';
 
   const src = work.type === 'image' ? work.image : work.thumbnail;
   if (src) {
     const img = document.createElement('img');
     img.src = src;
     img.alt = work.title;
-    img.onerror = () => { imageArea.textContent = '画像なし'; };
-    imageArea.appendChild(img);
+    img.onerror = () => {
+      thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : '画像なし'}</div>`;
+      badge.remove();
+    };
+    thumb.appendChild(img);
     if (work.type === 'image') {
-      imageArea.addEventListener('click', () => openModal(src, work.title));
+      thumb.addEventListener('click', () => openModal(src, work.title));
     }
   } else {
-    imageArea.textContent = work.type === 'html' ? 'HTMLサイト' : '画像なし';
+    thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : '画像なし'}</div>`;
   }
 
+  const badge = document.createElement('span');
+  badge.className = `card-badge ${work.type === 'image' ? 'badge-image' : 'badge-website'}`;
+  badge.textContent = work.type === 'image' ? 'Image' : 'Website';
+  thumb.appendChild(badge);
+
+  // Body
   const body = document.createElement('div');
   body.className = 'card-body';
 
-  const meta = document.createElement('div');
-  meta.className = 'card-meta';
-  meta.innerHTML = `<span class="card-tool">${work.tool}</span><span class="card-date">${work.date}</span>`;
+  const metaRow = document.createElement('div');
+  metaRow.className = 'card-meta-row';
+  metaRow.innerHTML = `<span class="card-date">${work.date}</span><span class="card-id">ID: W${index}</span>`;
 
-  const title = document.createElement('div');
-  title.className = 'card-title';
+  const titleEl = document.createElement('div');
+  titleEl.className = 'card-title';
   if (work.type === 'html' && work.url) {
-    title.innerHTML = `<a href="${work.url}" target="_blank" rel="noopener">${work.title}</a>`;
+    titleEl.innerHTML = `<a href="${work.url}" target="_blank" rel="noopener">${work.title}<span class="link-icon">↗</span></a>`;
   } else {
-    title.textContent = work.title;
+    titleEl.textContent = work.title;
   }
 
+  // Info rows
+  const info = document.createElement('div');
+  info.className = 'card-info';
+
+  // TOOLS row
+  info.appendChild(makeInfoRow('TOOLS', work.tool));
+
+  // PROMPT / NOTES row
   const textContent = work.type === 'image' ? work.prompt : work.memo;
-  const text = document.createElement('p');
-  text.className = 'card-text';
-  text.textContent = textContent || '';
-
-  const tags = document.createElement('div');
-  tags.className = 'card-tags';
-  (work.tags || []).forEach(tag => {
-    const span = document.createElement('span');
-    span.className = 'card-tag';
-    span.textContent = tag;
-    tags.appendChild(span);
-  });
-
-  const expandArea = document.createElement('div');
-  expandArea.className = 'card-expand';
-  const expandBtn = document.createElement('button');
-  expandBtn.className = 'expand-btn';
-  expandBtn.textContent = work.type === 'image' ? 'プロンプト全文を見る' : 'メモ全文を見る';
-  const expandContent = document.createElement('div');
-  expandContent.className = 'expand-content';
-  expandContent.textContent = textContent || '';
-  expandBtn.addEventListener('click', () => {
-    expandContent.classList.toggle('open');
-    expandBtn.textContent = expandContent.classList.contains('open')
-      ? '閉じる'
-      : (work.type === 'image' ? 'プロンプト全文を見る' : 'メモ全文を見る');
-  });
-
-  if (textContent && textContent.length > 80) {
-    expandArea.appendChild(expandBtn);
-    expandArea.appendChild(expandContent);
+  const rowLabel = work.type === 'image' ? 'PROMPT' : 'NOTES';
+  if (textContent) {
+    info.appendChild(makeExpandableRow(rowLabel, textContent));
   }
 
-  body.appendChild(meta);
-  body.appendChild(title);
-  body.appendChild(text);
-  body.appendChild(tags);
-  if (textContent && textContent.length > 80) body.appendChild(expandArea);
+  // TAGS row
+  const tagsRow = document.createElement('div');
+  tagsRow.className = 'info-row';
+  const tagsLabel = document.createElement('span');
+  tagsLabel.className = 'info-label';
+  tagsLabel.textContent = 'TAGS';
+  const tagsVal = document.createElement('div');
+  tagsVal.className = 'card-tags';
+  (work.tags || []).forEach(tag => {
+    const t = document.createElement('span');
+    t.className = 'card-tag';
+    t.textContent = tag;
+    tagsVal.appendChild(t);
+  });
+  tagsRow.appendChild(tagsLabel);
+  tagsRow.appendChild(tagsVal);
+  info.appendChild(tagsRow);
 
-  card.appendChild(imageArea);
+  body.appendChild(metaRow);
+  body.appendChild(titleEl);
+  body.appendChild(info);
+
+  card.appendChild(thumb);
   card.appendChild(body);
   return card;
 }
 
+function makeInfoRow(label, value) {
+  const row = document.createElement('div');
+  row.className = 'info-row';
+  row.innerHTML = `<span class="info-label">${label}</span><span class="info-value">${value}</span>`;
+  return row;
+}
+
+function makeExpandableRow(label, text) {
+  const row = document.createElement('div');
+  row.className = 'info-row';
+
+  const labelEl = document.createElement('span');
+  labelEl.className = 'info-label';
+  labelEl.textContent = label;
+
+  const valEl = document.createElement('div');
+  valEl.className = 'info-value';
+
+  if (text.length <= 60) {
+    valEl.textContent = text;
+  } else {
+    const preview = document.createElement('span');
+    preview.className = 'info-text';
+    preview.textContent = text;
+
+    const btn = document.createElement('button');
+    btn.className = 'expand-btn';
+    btn.textContent = '全文を表示';
+
+    const full = document.createElement('div');
+    full.className = 'expand-content';
+    full.textContent = text;
+
+    btn.addEventListener('click', () => {
+      const isOpen = full.classList.toggle('open');
+      preview.style.display = isOpen ? 'none' : '';
+      btn.textContent = isOpen ? '閉じる' : '全文を表示';
+    });
+
+    valEl.appendChild(preview);
+    valEl.appendChild(btn);
+    valEl.appendChild(full);
+  }
+
+  row.appendChild(labelEl);
+  row.appendChild(valEl);
+  return row;
+}
+
+// Modal
 const modal = document.getElementById('modal');
 const modalImg = document.getElementById('modal-img');
 
@@ -153,12 +241,12 @@ document.getElementById('modal-close').addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+// Type filter
 document.querySelectorAll('.type-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    const type = btn.dataset.type;
-    activeType = activeType === type ? null : type;
+    activeType = btn.dataset.type;
     document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
-    if (activeType) btn.classList.add('active');
+    btn.classList.add('active');
     renderGallery();
   });
 });
