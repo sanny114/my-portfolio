@@ -68,6 +68,9 @@ function createCard(work) {
     img.alt = work.title;
     img.onerror = () => { imageArea.textContent = '画像なし'; };
     imageArea.appendChild(img);
+    if (work.type === 'image') {
+      imageArea.addEventListener('click', () => openModal(src, work.title));
+    }
   } else {
     imageArea.textContent = work.type === 'html' ? 'HTMLサイト' : '画像なし';
   }
@@ -131,6 +134,24 @@ function createCard(work) {
   card.appendChild(body);
   return card;
 }
+
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+
+function openModal(src, alt) {
+  modalImg.src = src;
+  modalImg.alt = alt;
+  modal.classList.add('open');
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+  modalImg.src = '';
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 document.querySelectorAll('.type-btn').forEach(btn => {
   btn.addEventListener('click', () => {

@@ -230,6 +230,43 @@ header p {
   font-size: 0.95rem;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.modal-close {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.card-image {
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   header, .controls, .gallery {
     padding-left: 16px;
