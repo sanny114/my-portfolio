@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "type": "image",
+    "title": "サンプル：AIで作ったロゴ",
+    "tool": "ChatGPT",
+    "date": "2026-03",
+    "image": "images/generated/sample-logo.png",
+    "prompt": "シンプルでモダンなAIコミュニティのロゴ。青と白を基調に、対話をイメージした丸いフォルム。",
+    "tags": ["画像生成", "実験"],
+    "published": true
+  },
+  {
+    "id": 2,
+    "type": "html",
+    "title": "サンプル：セミナー告知ページ",
+    "tool": "Claude Code",
+    "date": "2026-04",
+    "thumbnail": "images/thumbnails/sample-seminar.png",
+    "url": "https://sanny114.github.io/sample-seminar/",
+    "memo": "Peatixの告知文をベースに、Claude Codeでランディングページを自動生成。プロンプトは使わず、告知文をそのまま貼り付けて構成してもらった。",
+    "tags": ["Claude Code", "セミナー"],
+    "published": true
+  }
+]
