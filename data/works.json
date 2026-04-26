@@ -7,7 +7,7 @@
     "date": "2026-04",
     "image": "images/generated/ChatGPT_mirai-yosoku20260425.png",
     "prompt": "①あなたが記録している過去の私とのチャットを分析して、5年後10年後20年後の私はどうなっているか、具体的かつ現実的に予測してください。\n②出力した内容について、グラレコ風のインフォグラフィックで作成してください。",
-    "tags": ["画像生成", "Career"],
+    "tags": ["ChatGPT", "Career"],
     "published": true
   },
   {
@@ -18,7 +18,7 @@
     "date": "2026-04",
     "image": "images/generated/ChatGPT_CSImage20260425.png",
     "prompt": "ChatGPTにSharePointを使ったCS調査送付先管理について相談している中で、整理のために画像化してもらったもの。特定のプロンプトはなし。",
-    "tags": ["画像生成", "work"],
+    "tags": ["ChatGPT", "work"],
     "published": true
   },
   {
@@ -30,7 +30,7 @@
     "thumbnail": "images/thumbnails/km-benchmark.png",
     "url": "https://sanny114.github.io/km-benchmark-review/",
     "memo": "ChatGPT・Claude・Geminiの3AIで同じテーマ（BPO事業のナレッジマネジメント高度化）についてディープリサーチを実施。3本のレポートをClaude Designに渡し、比較・読み解き用のHTMLサイトを作成してもらった。",
-    "tags": ["Claude Design", "ディープリサーチ"],
+    "tags": ["Claude Design", "ディープリサーチ", "work"],
     "published": true
   },
   {
@@ -41,7 +41,7 @@
     "date": "2026-04",
     "image": "images/generated/ChatGPT_rishokuboushi20260425.png",
     "prompt": "新人プロジェクトリーダーの面談ログについてChatGPTとやりとりしたのちに「ここまで話したことを1枚の画像にインフォグラフィック形式でまとめてください」と依頼して作成。",
-    "tags": ["画像生成", "work"],
+    "tags": ["ChatGPT", "work"],
     "published": true
   },
   {
@@ -52,7 +52,7 @@
     "date": "2026-04",
     "image": "images/generated/nanobanana_portfolio20260426.jpg",
     "prompt": "ここまで話したことを1枚の画像にインフォグラフィック形式でまとめてください",
-    "tags": ["画像生成", "Claude Code", "Gemini", "フロー図"],
+    "tags": ["Claude Code", "Gemini", "フロー図"],
     "published": true
   },
   {
@@ -63,7 +63,7 @@
     "date": "2026-04",
     "image": "images/generated/ChatGPT_kakurituprint20260426.png",
     "prompt": "小学生の娘が、確率の問題を宿題でやりたいそうです。小学生にもわかるような説明と問題4問くらいを作成してください。縦で印刷におさまるように、プリント用紙の画像を作成してください。ノートにはります。問題は、答は入れずに問題文だけにして、「式」「答え」を書く欄も入れて。",
-    "tags": ["画像生成", "ChatGPT", "Family"],
+    "tags": ["ChatGPT", "Family"],
     "published": true
   },
   {
@@ -73,9 +73,9 @@
     "tool": "ChatGPT / Claude Code",
     "date": "2026-04",
     "thumbnail": "images/thumbnails/ClaudeDesign_weeklyreport20260426.jpg",
-    "url": "https://drive.google.com/drive/folders/1xKRyleUNAaTd7qGK1-99tLJq3O7d3o2M?usp=sharing",
+    "url": "https://docs.google.com/presentation/d/1CgqlAHefrBzJloQDufZzA58hllVa0WQ7/edit?usp=sharing&ouid=110597850693121329926&rtpof=true&sd=true",
     "memo": "2026年4月13〜19日の週次ログをまとめたスライド。Google Driveで公開。",
-    "tags": ["フロー図"],
+    "tags": ["Claude Design", "フロー図"],
     "published": true
   },
   {
@@ -86,7 +86,7 @@
     "date": "2026-04",
     "image": "images/generated/NotebookLM_funstudy20260426.png",
     "prompt": "①ChatGPT：勉強を楽しくなる方法を考えて。前に買ったドリルを終わらせたいけど、長くてなかなか終わらないです。小学校4年生の相談として答えてください。\n②NotebookLM：一度イラスト作成後「登場人物を女の子にしてインフォグラフィック形式のスライドを作ってください。」",
-    "tags": ["画像生成", "NotebookLM", "Family"],
+    "tags": ["NotebookLM", "Family"],
     "published": true
   }
 ]
