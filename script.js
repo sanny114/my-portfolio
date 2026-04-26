@@ -94,13 +94,13 @@ function createCard(work, index) {
   const thumb = document.createElement('div');
   thumb.className = 'card-thumb';
 
-  const src = work.type === 'image' ? work.image : work.thumbnail;
+  const src = work.type === 'image' ? work.image : (work.thumbnail || '');
   if (src) {
     const img = document.createElement('img');
     img.src = src;
     img.alt = work.title;
     img.onerror = () => {
-      thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : '画像なし'}</div>`;
+      thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : work.type === 'slide' ? 'スライド' : '画像なし'}</div>`;
       badge.remove();
     };
     thumb.appendChild(img);
@@ -108,12 +108,14 @@ function createCard(work, index) {
       thumb.addEventListener('click', () => openModal(src, work.title));
     }
   } else {
-    thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : '画像なし'}</div>`;
+    thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : work.type === 'slide' ? 'スライド' : '画像なし'}</div>`;
   }
 
   const badge = document.createElement('span');
-  badge.className = `card-badge ${work.type === 'image' ? 'badge-image' : 'badge-website'}`;
-  badge.textContent = work.type === 'image' ? 'Image' : 'Website';
+  const badgeClass = work.type === 'image' ? 'badge-image' : work.type === 'slide' ? 'badge-slide' : 'badge-website';
+  const badgeText = work.type === 'image' ? 'Image' : work.type === 'slide' ? 'Slide' : 'Website';
+  badge.className = `card-badge ${badgeClass}`;
+  badge.textContent = badgeText;
   thumb.appendChild(badge);
 
   // Body
@@ -126,7 +128,7 @@ function createCard(work, index) {
 
   const titleEl = document.createElement('div');
   titleEl.className = 'card-title';
-  if (work.type === 'html' && work.url) {
+  if ((work.type === 'html' || work.type === 'slide') && work.url) {
     titleEl.innerHTML = `<a href="${work.url}" target="_blank" rel="noopener">${work.title}<span class="link-icon">↗</span></a>`;
   } else {
     titleEl.textContent = work.title;
@@ -142,6 +144,7 @@ function createCard(work, index) {
   // PROMPT / NOTES row
   const textContent = work.type === 'image' ? work.prompt : work.memo;
   const rowLabel = work.type === 'image' ? 'PROMPT' : 'NOTES';
+
   if (textContent) {
     info.appendChild(makeExpandableRow(rowLabel, textContent));
   }

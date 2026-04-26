@@ -230,6 +230,7 @@ a { text-decoration: none; color: inherit; }
 }
 .badge-image { background: rgba(26,26,46,0.85); color: #fff; }
 .badge-website { background: rgba(59,111,201,0.85); color: #fff; }
+.badge-slide { background: rgba(120,60,180,0.85); color: #fff; }
 
 .card-body { padding: 14px 16px 16px; }
 

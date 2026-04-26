@@ -54,5 +54,28 @@
     "prompt": "ここまで話したことを1枚の画像にインフォグラフィック形式でまとめてください",
     "tags": ["画像生成", "Claude Code", "Gemini", "フロー図"],
     "published": true
+  },
+  {
+    "id": 6,
+    "type": "image",
+    "title": "小学生向け確率のプリント",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-04",
+    "image": "images/generated/ChatGPT_kakurituprint20260426.png",
+    "prompt": "小学生の娘が、確率の問題を宿題でやりたいそうです。小学生にもわかるような説明と問題4問くらいを作成してください。縦で印刷におさまるように、プリント用紙の画像を作成してください。ノートにはります。問題は、答は入れずに問題文だけにして、「式」「答え」を書く欄も入れて。",
+    "tags": ["画像生成", "ChatGPT", "Family"],
+    "published": true
+  },
+  {
+    "id": 7,
+    "type": "slide",
+    "title": "週次ログ 2026年4月13日〜19日",
+    "tool": "ChatGPT / Claude Code",
+    "date": "2026-04",
+    "thumbnail": "",
+    "url": "https://drive.google.com/drive/folders/1xKRyleUNAaTd7qGK1-99tLJq3O7d3o2M?usp=sharing",
+    "memo": "2026年4月13〜19日の週次ログをまとめたスライド。Google Driveで公開。",
+    "tags": ["フロー図"],
+    "published": true
   }
 ]
