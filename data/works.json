@@ -77,5 +77,16 @@
     "memo": "2026年4月13〜19日の週次ログをまとめたスライド。Google Driveで公開。",
     "tags": ["フロー図"],
     "published": true
+  },
+  {
+    "id": 8,
+    "type": "image",
+    "title": "ドリルを最後まで終わらせる6つの魔法",
+    "tool": "NotebookLM・ChatGPT",
+    "date": "2026-04",
+    "image": "images/generated/NotebookLM_funstudy20260426.png",
+    "prompt": "①ChatGPT：勉強を楽しくなる方法を考えて。前に買ったドリルを終わらせたいけど、長くてなかなか終わらないです。小学校4年生の相談として答えてください。\n②NotebookLM：一度イラスト作成後「登場人物を女の子にしてインフォグラフィック形式のスライドを作ってください。」",
+    "tags": ["画像生成", "NotebookLM", "Family"],
+    "published": true
   }
 ]
