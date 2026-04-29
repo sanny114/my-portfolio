@@ -100,5 +100,16 @@
     "memo": "家計簿をまとめたExcelをClaude Code上で分析を依頼。食生活の変化に伴う食費や外食の傾向は変わったかどうか。結果をHTMLでまとめて、GitHub PagesにUP。",
     "tags": ["Claude Code", "Family"],
     "published": true
+  },
+  {
+    "id": 10,
+    "type": "image",
+    "title": "「ゼロ秒思考」A4メモ書きのやりかた",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-04",
+    "image": "images/generated/ChatGPT_A4memo20260429.png",
+    "prompt": "①0秒思考で紹介されているA4メモ書きの方法を調べてください。なるべく公式で紹介されているやり方に準拠してください。\n②横書きでグラレコ風にインフォグラフィックを作成してください。",
+    "tags": ["ChatGPT", "Family"],
+    "published": true
   }
 ]
