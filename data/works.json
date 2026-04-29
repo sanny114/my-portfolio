@@ -88,5 +88,17 @@
     "prompt": "①ChatGPT：勉強を楽しくなる方法を考えて。前に買ったドリルを終わらせたいけど、長くてなかなか終わらないです。小学校4年生の相談として答えてください。\n②NotebookLM：一度イラスト作成後「登場人物を女の子にしてインフォグラフィック形式のスライドを作ってください。」",
     "tags": ["NotebookLM", "Family"],
     "published": true
+  },
+  {
+    "id": 9,
+    "type": "html",
+    "title": "食費分析レポート",
+    "tool": "Claude Code",
+    "date": "2026-04",
+    "thumbnail": "images/thumbnails/スクリーンショット 2026-04-29 171741.jpg",
+    "url": "https://sanny114.github.io/food-expense-report/",
+    "memo": "家計簿をまとめたExcelをClaude Code上で分析を依頼。食生活の変化に伴う食費や外食の傾向は変わったかどうか。結果をHTMLでまとめて、GitHub PagesにUP。",
+    "tags": ["Claude Code", "Family"],
+    "published": true
   }
 ]
