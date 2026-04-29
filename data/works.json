@@ -111,5 +111,16 @@
     "prompt": "①0秒思考で紹介されているA4メモ書きの方法を調べてください。なるべく公式で紹介されているやり方に準拠してください。\n②横書きでグラレコ風にインフォグラフィックを作成してください。",
     "tags": ["ChatGPT", "Family"],
     "published": true
+  },
+  {
+    "id": 11,
+    "type": "image",
+    "title": "給食で食べたバンサンスーのレシピ",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-04",
+    "image": "images/generated/ChatGPT_bansansu20260429.png",
+    "prompt": "①4毒を使わないで作るバンサンスー\n②レシピを画像で作成して",
+    "tags": ["ChatGPT", "Family"],
+    "published": true
   }
 ]
