@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理画面 — AIアウトプット集</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif; background: #f5f5f3; color: #1a1a1a; }
+
+    .top-bar {
+      background: #1a1a2e; color: #fff;
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .top-bar h1 { font-size: 1rem; font-weight: 700; }
+    .top-bar a { color: #aab8cc; font-size: 0.85rem; text-decoration: none; }
+    .top-bar a:hover { color: #fff; }
+
+    .auth-section {
+      background: #fff; border-bottom: 1px solid #e8e8e4;
+      padding: 16px 24px;
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .auth-section label { font-size: 0.85rem; color: #555; font-weight: 600; }
+    .auth-section input {
+      flex: 1; min-width: 200px; max-width: 400px;
+      padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px;
+      font-size: 0.85rem; font-family: monospace;
+    }
+    .btn {
+      padding: 8px 18px; border-radius: 6px; border: none;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    }
+    .btn-dark { background: #1a1a2e; color: #fff; }
+    .btn-dark:hover { background: #2d2d4e; }
+    .btn-green { background: #2d7a2d; color: #fff; }
+    .btn-green:hover { background: #256025; }
+    .btn-red { background: #c0392b; color: #fff; }
+    .btn-sm { padding: 4px 10px; font-size: 0.78rem; }
+
+    .status-bar {
+      padding: 10px 24px; font-size: 0.82rem;
+      display: none;
+    }
+    .status-bar.info { background: #eef2f8; color: #3b6fc9; display: block; }
+    .status-bar.success { background: #eafaea; color: #2d7a2d; display: block; }
+    .status-bar.error { background: #fdecea; color: #c0392b; display: block; }
+
+    .main { max-width: 900px; margin: 0 auto; padding: 24px; }
+
+    .section-title {
+      font-size: 1rem; font-weight: 800; margin-bottom: 14px;
+      padding-bottom: 8px; border-bottom: 2px solid #1a1a2e;
+    }
+
+    /* Tag manager */
+    .tag-manager {
+      background: #fff; border: 1px solid #e8e8e4; border-radius: 10px;
+      padding: 18px; margin-bottom: 24px;
+    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .tag-item {
+      display: flex; align-items: center; gap: 6px;
+      background: #eef2f8; border-radius: 20px;
+      padding: 4px 12px; font-size: 0.82rem; color: #3b6fc9;
+    }
+    .tag-remove {
+      background: none; border: none; color: #aaa; cursor: pointer;
+      font-size: 1rem; line-height: 1; padding: 0;
+    }
+    .tag-remove:hover { color: #c0392b; }
+    .tag-add-row { display: flex; gap: 8px; }
+    .tag-add-row input {
+      flex: 1; padding: 7px 12px; border: 1px solid #ddd;
+      border-radius: 6px; font-size: 0.85rem;
+    }
+
+    /* Work cards */
+    .work-card {
+      background: #fff; border: 1px solid #e8e8e4; border-radius: 10px;
+      padding: 16px; margin-bottom: 14px;
+    }
+    .work-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+    }
+    .work-badge {
+      font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+    }
+    .badge-image { background: #1a1a2e; color: #fff; }
+    .badge-website { background: #3b6fc9; color: #fff; }
+    .badge-slide { background: #783cb4; color: #fff; }
+    .work-title { font-size: 0.95rem; font-weight: 700; flex: 1; }
+    .work-published {
+      font-size: 0.75rem; padding: 3px 10px; border-radius: 20px;
+      border: none; cursor: pointer; font-weight: 600;
+    }
+    .work-published.on { background: #eafaea; color: #2d7a2d; }
+    .work-published.off { background: #fdecea; color: #c0392b; }
+
+    .work-tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .work-tag {
+      display: flex; align-items: center; gap: 4px;
+      background: #eef2f8; border-radius: 20px;
+      padding: 3px 10px; font-size: 0.78rem; color: #3b6fc9;
+    }
+    .work-tag-remove {
+      background: none; border: none; color: #aaa; cursor: pointer;
+      font-size: 0.9rem; line-height: 1; padding: 0;
+    }
+    .work-tag-remove:hover { color: #c0392b; }
+    .tag-selector {
+      padding: 4px 8px; border: 1px solid #ddd; border-radius: 6px;
+      font-size: 0.8rem; background: #fff;
+    }
+
+    .save-area { text-align: center; padding: 24px 0; }
+    .save-area .btn { padding: 14px 40px; font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <h1>管理画面 — AIアウトプット集</h1>
+  <a href="index.html">← サイトに戻る</a>
+</div>
+
+<div class="auth-section">
+  <label>GitHub PAT:</label>
+  <input type="password" id="pat-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+  <button class="btn btn-dark" onclick="loadData()">読み込む</button>
+</div>
+
+<div class="status-bar" id="status"></div>
+
+<div class="main" id="main-content" style="display:none">
+
+  <div class="tag-manager">
+    <div class="section-title">タグ管理</div>
+    <div class="tag-list" id="tag-list"></div>
+    <div class="tag-add-row">
+      <input type="text" id="new-tag-input" placeholder="新しいタグを追加" onkeydown="if(event.key==='Enter')addTag()">
+      <button class="btn btn-dark btn-sm" onclick="addTag()">追加</button>
+    </div>
+  </div>
+
+  <div class="section-title">作品一覧</div>
+  <div id="works-list"></div>
+
+  <div class="save-area">
+    <button class="btn btn-green" onclick="saveAll()">GitHubに保存する</button>
+  </div>
+</div>
+
+<script>
+const OWNER = 'sanny114';
+const REPO = 'my-portfolio';
+const WORKS_PATH = 'data/works.json';
+const TAGS_PATH = 'data/tags.json';
+
+let works = [];
+let tags = [];
+let worksSha = '';
+let tagsSha = '';
+
+function getPat() {
+  return document.getElementById('pat-input').value.trim();
+}
+
+function setStatus(msg, type) {
+  const el = document.getElementById('status');
+  el.textContent = msg;
+  el.className = `status-bar ${type}`;
+}
+
+async function ghGet(path) {
+  const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
+    headers: { Authorization: `token ${getPat()}`, Accept: 'application/vnd.github.v3+json' }
+  });
+  if (!res.ok) throw new Error(`取得失敗: ${path}`);
+  return res.json();
+}
+
+async function ghPut(path, content, sha, message) {
+  const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
+    method: 'PUT',
+    headers: { Authorization: `token ${getPat()}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message, content: btoa(unescape(encodeURIComponent(content))), sha })
+  });
+  if (!res.ok) throw new Error(`保存失敗: ${path}`);
+  return res.json();
+}
+
+async function loadData() {
+  if (!getPat()) { setStatus('PATを入力してください', 'error'); return; }
+  setStatus('読み込み中...', 'info');
+  try {
+    const [wr, tr] = await Promise.all([ghGet(WORKS_PATH), ghGet(TAGS_PATH)]);
+    works = JSON.parse(decodeURIComponent(escape(atob(wr.content.replace(/\n/g,'')))));
+    tags = JSON.parse(decodeURIComponent(escape(atob(tr.content.replace(/\n/g,'')))));
+    worksSha = wr.sha;
+    tagsSha = tr.sha;
+    document.getElementById('main-content').style.display = 'block';
+    setStatus(`読み込み完了（作品${works.length}件・タグ${tags.length}件）`, 'success');
+    renderAll();
+  } catch(e) {
+    setStatus('読み込みエラー: ' + e.message + '（PATを確認してください）', 'error');
+  }
+}
+
+function renderAll() {
+  renderTags();
+  renderWorks();
+}
+
+function renderTags() {
+  const el = document.getElementById('tag-list');
+  el.innerHTML = '';
+  tags.forEach((tag, i) => {
+    const div = document.createElement('div');
+    div.className = 'tag-item';
+    div.innerHTML = `${tag}<button class="tag-remove" onclick="removeTag(${i})">×</button>`;
+    el.appendChild(div);
+  });
+}
+
+function addTag() {
+  const input = document.getElementById('new-tag-input');
+  const val = input.value.trim();
+  if (!val || tags.includes(val)) { input.value = ''; return; }
+  tags.push(val);
+  input.value = '';
+  renderAll();
+}
+
+function removeTag(i) {
+  tags.splice(i, 1);
+  renderAll();
+}
+
+function renderWorks() {
+  const el = document.getElementById('works-list');
+  el.innerHTML = '';
+  works.forEach((work, wi) => {
+    const card = document.createElement('div');
+    card.className = 'work-card';
+
+    const badgeClass = work.type === 'image' ? 'badge-image' : work.type === 'slide' ? 'badge-slide' : 'badge-website';
+    const badgeText = work.type === 'image' ? 'Image' : work.type === 'slide' ? 'Slide' : 'Website';
+    const pubClass = work.published ? 'on' : 'off';
+    const pubText = work.published ? '公開中' : '非公開';
+
+    const tagItems = (work.tags || []).map((tag, ti) =>
+      `<span class="work-tag">${tag}<button class="work-tag-remove" onclick="removeWorkTag(${wi},${ti})">×</button></span>`
+    ).join('');
+
+    const tagOptions = tags.filter(t => !(work.tags||[]).includes(t))
+      .map(t => `<option value="${t}">${t}</option>`).join('');
+
+    card.innerHTML = `
+      <div class="work-header">
+        <span class="work-badge ${badgeClass}">${badgeText}</span>
+        <span class="work-title">${work.title}</span>
+        <button class="work-published ${pubClass}" onclick="togglePublished(${wi})">${pubText}</button>
+      </div>
+      <div class="work-tags">
+        ${tagItems}
+        <select class="tag-selector" onchange="addWorkTag(${wi}, this)">
+          <option value="">＋ タグを追加</option>
+          ${tagOptions}
+        </select>
+      </div>
+    `;
+    el.appendChild(card);
+  });
+}
+
+function removeWorkTag(wi, ti) {
+  works[wi].tags.splice(ti, 1);
+  renderWorks();
+}
+
+function addWorkTag(wi, sel) {
+  const tag = sel.value;
+  if (!tag) return;
+  if (!works[wi].tags) works[wi].tags = [];
+  if (!works[wi].tags.includes(tag)) works[wi].tags.push(tag);
+  renderWorks();
+}
+
+function togglePublished(wi) {
+  works[wi].published = !works[wi].published;
+  renderWorks();
+}
+
+async function saveAll() {
+  if (!getPat()) { setStatus('PATを入力してください', 'error'); return; }
+  setStatus('保存中...', 'info');
+  try {
+    const worksJson = JSON.stringify(works, null, 2) + '\n';
+    const tagsJson = JSON.stringify(tags) + '\n';
+    await Promise.all([
+      ghPut(WORKS_PATH, worksJson, worksSha, 'Update works.json via admin'),
+      ghPut(TAGS_PATH, tagsJson, tagsSha, 'Update tags.json via admin')
+    ]);
+    setStatus('GitHubに保存しました。1〜2分でサイトに反映されます。', 'success');
+    await loadData();
+  } catch(e) {
+    setStatus('保存エラー: ' + e.message, 'error');
+  }
+}
+</script>
+</body>
+</html>
