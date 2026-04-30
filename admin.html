@@ -299,6 +299,9 @@ function togglePublished(wi) {
 
 async function saveAll() {
   if (!getPat()) { setStatus('PATを入力してください', 'error'); return; }
+  const btn = document.querySelector('.save-area .btn');
+  btn.disabled = true;
+  btn.textContent = '保存中...';
   setStatus('保存中...', 'info');
   try {
     const worksJson = JSON.stringify(works, null, 2) + '\n';
@@ -311,7 +314,10 @@ async function saveAll() {
     tagsSha = tr.content.sha;
     setStatus('GitHubに保存しました。1〜2分でサイトに反映されます。', 'success');
   } catch(e) {
-    setStatus('保存エラー: ' + e.message, 'error');
+    setStatus('保存エラー: ' + e.message + ' — 「読み込む」を押してから再試行してください', 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'GitHubに保存する';
   }
 }
 </script>
