@@ -304,6 +304,10 @@ async function saveAll() {
   btn.textContent = '保存中...';
   setStatus('保存中...', 'info');
   try {
+    const [freshWr, freshTr] = await Promise.all([ghGet(WORKS_PATH), ghGet(TAGS_PATH)]);
+    worksSha = freshWr.sha;
+    tagsSha = freshTr.sha;
+
     const worksJson = JSON.stringify(works, null, 2) + '\n';
     const tagsJson = JSON.stringify(tags) + '\n';
     const [wr, tr] = await Promise.all([
@@ -314,7 +318,7 @@ async function saveAll() {
     tagsSha = tr.content.sha;
     setStatus('GitHubに保存しました。1〜2分でサイトに反映されます。', 'success');
   } catch(e) {
-    setStatus('保存エラー: ' + e.message + ' — 「読み込む」を押してから再試行してください', 'error');
+    setStatus('保存エラー: ' + e.message, 'error');
   } finally {
     btn.disabled = false;
     btn.textContent = 'GitHubに保存する';
