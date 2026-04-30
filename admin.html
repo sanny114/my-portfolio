@@ -182,12 +182,16 @@ async function ghGet(path) {
 }
 
 async function ghPut(path, content, sha, message) {
+  console.log('PUT', path, 'sha=', sha);
   const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
     method: 'PUT',
     headers: { Authorization: `token ${getPat()}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message, content: btoa(unescape(encodeURIComponent(content))), sha })
+    body: JSON.stringify({ message, content: btoa(unescape(encodeURIComponent(content))), sha, branch: 'main' })
   });
-  if (!res.ok) throw new Error(`保存失敗: ${path}`);
+  if (!res.ok) {
+    const errBody = await res.json().catch(() => ({}));
+    throw new Error(`保存失敗: ${path} [${res.status}] ${errBody.message || ''}`);
+  }
   return res.json();
 }
 
