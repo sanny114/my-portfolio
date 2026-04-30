@@ -175,7 +175,7 @@ function setStatus(msg, type) {
 
 async function ghGet(path) {
   const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}?t=${Date.now()}`, {
-    headers: { Authorization: `token ${getPat()}`, Accept: 'application/vnd.github.v3+json', 'Cache-Control': 'no-cache' }
+    headers: { Authorization: `token ${getPat()}`, Accept: 'application/vnd.github.v3+json' }
   });
   if (!res.ok) throw new Error(`取得失敗: ${path}`);
   return res.json();
