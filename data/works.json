@@ -158,5 +158,16 @@
       "Family"
     ],
     "published": true
+  },
+  {
+    "id": 12,
+    "type": "image",
+    "title": "ヘルシオで作る白菜と豚バラ肉のカリカリ焼き",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-04",
+    "image": "images/generated/ChatGPT_butakari20260429.png",
+    "prompt": "①レシピを手入力②レシピを画像で作成して",
+    "tags": ["ChatGPT"],
+    "published": true
   }
 ]
