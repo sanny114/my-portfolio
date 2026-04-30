@@ -303,12 +303,13 @@ async function saveAll() {
   try {
     const worksJson = JSON.stringify(works, null, 2) + '\n';
     const tagsJson = JSON.stringify(tags) + '\n';
-    await Promise.all([
+    const [wr, tr] = await Promise.all([
       ghPut(WORKS_PATH, worksJson, worksSha, 'Update works.json via admin'),
       ghPut(TAGS_PATH, tagsJson, tagsSha, 'Update tags.json via admin')
     ]);
+    worksSha = wr.content.sha;
+    tagsSha = tr.content.sha;
     setStatus('GitHubに保存しました。1〜2分でサイトに反映されます。', 'success');
-    await loadData();
   } catch(e) {
     setStatus('保存エラー: ' + e.message, 'error');
   }
