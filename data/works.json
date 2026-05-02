@@ -167,10 +167,40 @@
     "date": "2026-04",
     "image": "images/generated/ChatGPT_butakari20260429.png",
     "prompt": "①レシピを手入力②レシピを画像で作成して",
-    "tags": [
-      "ChatGPT",
-      "Family"
-    ],
+    "tags": ["ChatGPT", "Family"],
+    "published": true
+  },
+  {
+    "id": 13,
+    "type": "image",
+    "title": "4毒抜きの牛丼",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-05",
+    "image": "images/generated/ChatGPT gyudon20260502.png",
+    "prompt": "①レシピをChatGPTと壁打ち②レシピを画像にして",
+    "tags": ["ChatGPT", "Family"],
+    "published": true
+  },
+  {
+    "id": 14,
+    "type": "image",
+    "title": "PowerAppsの見た目を良くするコツ",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-05",
+    "image": "images/generated/ChatGPT_PowerAppsPOINT20260502.png",
+    "prompt": "①MicrosoftのPowerAppsの見た目を良くするコツってありますか②ポイントをグラレコ風に画像にまとめて",
+    "tags": ["ChatGPT", "work"],
+    "published": true
+  },
+  {
+    "id": 15,
+    "type": "image",
+    "title": "Copilot活用方法2026年5月",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-05",
+    "image": "images/generated/ChatGPT_copilot20260502.png",
+    "prompt": "ChatGPTとGeminiでCopilotについてディープリサーチ。ChatGPTにて構成を相談したうえでグラレコ風にまとめてもらう",
+    "tags": ["ChatGPT", "work"],
     "published": true
   }
 ]
