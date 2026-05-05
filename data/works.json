@@ -213,5 +213,23 @@
     "prompt": "①レシピをChatGPTと壁打ち②レシピを画像にして",
     "tags": ["ChatGPT", "Family"],
     "published": true
+  },
+  {
+    "id": 17,
+    "type": "gallery",
+    "title": "Copilot活用まとめ_2026年5月版",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-05",
+    "images": [
+      "images/generated/ChatGPT_copilot1_20260505.png",
+      "images/generated/ChatGPT_copilot2_20260505.png",
+      "images/generated/ChatGPT_copilot3_20260505.png",
+      "images/generated/ChatGPT_copilot4_20260505.png",
+      "images/generated/ChatGPT_copilot5_20260505.png",
+      "images/generated/ChatGPT_copilot6_20260505.png"
+    ],
+    "prompt": "ChatGPTとGeminiでディープリサーチしたあとに、ChatGPTで構成案を壁打ちしたあとにグラレコ風に画像作成。",
+    "tags": ["ChatGPT", "work"],
+    "published": true
   }
 ]

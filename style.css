@@ -333,6 +333,33 @@ a { text-decoration: none; color: inherit; }
   cursor: pointer;
   line-height: 1;
 }
+.modal-prev, .modal-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 16px;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+  z-index: 1001;
+}
+.modal-prev:hover, .modal-next:hover { opacity: 1; }
+.modal-prev { left: 12px; }
+.modal-next { right: 12px; }
+.modal-prev.hidden, .modal-next.hidden { display: none; }
+.modal-counter {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
 
 /* ── Footer ── */
 .site-footer {

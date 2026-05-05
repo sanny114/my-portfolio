@@ -2,6 +2,8 @@ let allWorks = [];
 let allTags = [];
 let activeTag = null;
 let activeType = '';
+let galleryImages = [];
+let galleryIndex = 0;
 
 async function loadData() {
   const [worksRes, tagsRes] = await Promise.all([
@@ -18,7 +20,7 @@ async function loadData() {
 
 function renderStats() {
   const published = allWorks.filter(w => w.published);
-  const images = published.filter(w => w.type === 'image').length;
+  const images = published.filter(w => w.type === 'image' || w.type === 'gallery').length;
   const sites = published.filter(w => w.type === 'html').length;
   const dates = published.map(w => w.date).sort().reverse();
   const lastDate = dates[0] ? dates[0].replace('-', '.') : '—';
@@ -94,7 +96,9 @@ function createCard(work, index) {
   const thumb = document.createElement('div');
   thumb.className = 'card-thumb';
 
-  const src = work.type === 'image' ? work.image : (work.thumbnail || '');
+  const src = work.type === 'image' ? work.image
+    : work.type === 'gallery' ? (work.images && work.images[0] || '')
+    : (work.thumbnail || '');
   if (src) {
     const img = document.createElement('img');
     img.src = src;
@@ -106,14 +110,16 @@ function createCard(work, index) {
     thumb.appendChild(img);
     if (work.type === 'image') {
       thumb.addEventListener('click', () => openModal(src, work.title));
+    } else if (work.type === 'gallery') {
+      thumb.addEventListener('click', () => openGallery(work.images, 0, work.title));
     }
   } else {
     thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : work.type === 'slide' ? 'スライド' : '画像なし'}</div>`;
   }
 
   const badge = document.createElement('span');
-  const badgeClass = work.type === 'image' ? 'badge-image' : work.type === 'slide' ? 'badge-slide' : 'badge-website';
-  const badgeText = work.type === 'image' ? 'Image' : work.type === 'slide' ? 'Slide' : 'Website';
+  const badgeClass = work.type === 'image' || work.type === 'gallery' ? 'badge-image' : work.type === 'slide' ? 'badge-slide' : 'badge-website';
+  const badgeText = work.type === 'image' ? 'Image' : work.type === 'gallery' ? 'Gallery' : work.type === 'slide' ? 'Slide' : 'Website';
   badge.className = `card-badge ${badgeClass}`;
   badge.textContent = badgeText;
   thumb.appendChild(badge);
@@ -142,8 +148,8 @@ function createCard(work, index) {
   info.appendChild(makeInfoRow('TOOLS', work.tool));
 
   // PROMPT / NOTES row
-  const textContent = work.type === 'image' ? work.prompt : work.memo;
-  const rowLabel = work.type === 'image' ? 'PROMPT' : 'NOTES';
+  const textContent = (work.type === 'image' || work.type === 'gallery') ? work.prompt : work.memo;
+  const rowLabel = (work.type === 'image' || work.type === 'gallery') ? 'PROMPT' : 'NOTES';
 
   if (textContent) {
     info.appendChild(makeExpandableRow(rowLabel, textContent));
@@ -230,19 +236,61 @@ const modal = document.getElementById('modal');
 const modalImg = document.getElementById('modal-img');
 
 function openModal(src, alt) {
+  galleryImages = [src];
+  galleryIndex = 0;
   modalImg.src = src;
   modalImg.alt = alt;
+  document.getElementById('modal-counter').textContent = '';
+  document.getElementById('modal-prev').classList.add('hidden');
+  document.getElementById('modal-next').classList.add('hidden');
   modal.classList.add('open');
+}
+
+function openGallery(images, index, title) {
+  galleryImages = images;
+  galleryIndex = index;
+  updateGalleryModal(title);
+  modal.classList.add('open');
+}
+
+function updateGalleryModal(title) {
+  modalImg.src = galleryImages[galleryIndex];
+  modalImg.alt = title || '';
+  const counter = document.getElementById('modal-counter');
+  const prevBtn = document.getElementById('modal-prev');
+  const nextBtn = document.getElementById('modal-next');
+  counter.textContent = `${galleryIndex + 1} / ${galleryImages.length}`;
+  prevBtn.classList.toggle('hidden', galleryIndex === 0);
+  nextBtn.classList.toggle('hidden', galleryIndex === galleryImages.length - 1);
 }
 
 function closeModal() {
   modal.classList.remove('open');
   modalImg.src = '';
+  galleryImages = [];
+  galleryIndex = 0;
+  document.getElementById('modal-counter').textContent = '';
 }
 
 document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-prev').addEventListener('click', e => {
+  e.stopPropagation();
+  if (galleryIndex > 0) { galleryIndex--; updateGalleryModal(modalImg.alt); }
+});
+document.getElementById('modal-next').addEventListener('click', e => {
+  e.stopPropagation();
+  if (galleryIndex < galleryImages.length - 1) { galleryIndex++; updateGalleryModal(modalImg.alt); }
+});
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft' && galleryImages.length > 1 && galleryIndex > 0) {
+    galleryIndex--; updateGalleryModal(modalImg.alt);
+  }
+  if (e.key === 'ArrowRight' && galleryImages.length > 1 && galleryIndex < galleryImages.length - 1) {
+    galleryIndex++; updateGalleryModal(modalImg.alt);
+  }
+});
 
 // Type filter
 document.querySelectorAll('.type-btn').forEach(btn => {
