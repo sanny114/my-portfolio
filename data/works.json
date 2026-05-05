@@ -202,5 +202,16 @@
     "prompt": "ChatGPTとGeminiでCopilotについてディープリサーチ。ChatGPTにて構成を相談したうえでグラレコ風にまとめてもらう",
     "tags": ["ChatGPT", "work"],
     "published": true
+  },
+  {
+    "id": 16,
+    "type": "image",
+    "title": "四毒なし・辛くない麻婆豆腐",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-05",
+    "image": "images/generated/ChatGPT_mabodofu20260505.png",
+    "prompt": "①レシピをChatGPTと壁打ち②レシピを画像にして",
+    "tags": ["ChatGPT", "Family"],
+    "published": true
   }
 ]
