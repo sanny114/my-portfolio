@@ -23,7 +23,7 @@ function renderStats() {
   const images = published.filter(w => w.type === 'image' || w.type === 'gallery').length;
   const sites = published.filter(w => w.type === 'html').length;
   const dates = published.map(w => w.date).sort().reverse();
-  const lastDate = dates[0] ? dates[0].replace('-', '.') : '—';
+  const lastDate = dates[0] ? dates[0].replace(/-/g, '.') : '—';
 
   document.getElementById('stat-total').textContent = published.length;
   document.getElementById('stat-images').textContent = images;
@@ -84,13 +84,34 @@ function renderGallery() {
   }
 
   filtered.forEach((work, i) => {
-    gallery.appendChild(createCard(work, i + 1));
+    gallery.appendChild(createCard(work, i + 1, i));
   });
 }
 
-function createCard(work, index) {
+const ACCENTS = ['var(--accent-lime)', 'var(--accent-blue)', 'var(--accent-peach)'];
+
+function createCard(work, index, colorIndex) {
+  const accent = ACCENTS[colorIndex % 3];
+
   const card = document.createElement('div');
   card.className = 'card';
+  card.style.setProperty('--accent', accent);
+
+  // Top bar
+  const topbar = document.createElement('div');
+  topbar.className = 'card-topbar';
+
+  const num = document.createElement('span');
+  num.className = 'card-num';
+  num.textContent = '№' + String(index).padStart(2, '0');
+
+  const typeBadge = document.createElement('span');
+  typeBadge.className = 'card-type-badge';
+  const badgeMap = { image: 'IMG', gallery: 'GAL', html: 'WEB', slide: 'SLD' };
+  typeBadge.textContent = badgeMap[work.type] || 'ITEM';
+
+  topbar.appendChild(num);
+  topbar.appendChild(typeBadge);
 
   // Thumbnail
   const thumb = document.createElement('div');
@@ -99,136 +120,122 @@ function createCard(work, index) {
   const src = work.type === 'image' ? work.image
     : work.type === 'gallery' ? (work.images && work.images[0] || '')
     : (work.thumbnail || '');
+
   if (src) {
     const img = document.createElement('img');
     img.src = src;
     img.alt = work.title;
     img.onerror = () => {
-      thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : work.type === 'slide' ? 'スライド' : '画像なし'}</div>`;
-      badge.remove();
+      thumb.innerHTML = `<div class="card-thumb-placeholder">${badgeMap[work.type] || work.type}</div>`;
     };
     thumb.appendChild(img);
-    if (work.type === 'image') {
-      thumb.addEventListener('click', () => openModal(src, work.title));
-    } else if (work.type === 'gallery') {
-      thumb.addEventListener('click', () => openGallery(work.images, 0, work.title));
-    }
   } else {
-    thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : work.type === 'slide' ? 'スライド' : '画像なし'}</div>`;
+    thumb.innerHTML = `<div class="card-thumb-placeholder">${badgeMap[work.type] || work.type}</div>`;
   }
 
-  const badge = document.createElement('span');
-  const badgeClass = work.type === 'image' || work.type === 'gallery' ? 'badge-image' : work.type === 'slide' ? 'badge-slide' : 'badge-website';
-  const badgeText = work.type === 'image' ? 'Image' : work.type === 'gallery' ? 'Gallery' : work.type === 'slide' ? 'Slide' : 'Website';
-  badge.className = `card-badge ${badgeClass}`;
-  badge.textContent = badgeText;
-  thumb.appendChild(badge);
+  if (work.type === 'image') {
+    thumb.classList.add('clickable');
+    thumb.addEventListener('click', () => openModal(src, work.title));
+  } else if (work.type === 'gallery') {
+    thumb.classList.add('clickable');
+    thumb.addEventListener('click', () => openGallery(work.images, 0, work.title));
+  }
+
+  const dateBadge = document.createElement('span');
+  dateBadge.className = 'card-date-badge';
+  dateBadge.textContent = work.date.replace(/-/g, '.');
+  thumb.appendChild(dateBadge);
 
   // Body
   const body = document.createElement('div');
   body.className = 'card-body';
 
-  const metaRow = document.createElement('div');
-  metaRow.className = 'card-meta-row';
-  metaRow.innerHTML = `<span class="card-date">${work.date}</span><span class="card-id">ID: W${index}</span>`;
-
-  const titleEl = document.createElement('div');
-  titleEl.className = 'card-title';
+  // Title
   if ((work.type === 'html' || work.type === 'slide') && work.url) {
-    titleEl.innerHTML = `<a href="${work.url}" target="_blank" rel="noopener">${work.title}<span class="link-icon">↗</span></a>`;
+    const titleLink = document.createElement('a');
+    titleLink.className = 'card-title-link';
+    titleLink.href = work.url;
+    titleLink.target = '_blank';
+    titleLink.rel = 'noopener';
+
+    const titleText = document.createElement('span');
+    titleText.textContent = work.title;
+
+    const linkIcon = document.createElement('span');
+    linkIcon.className = 'link-icon';
+    linkIcon.textContent = '↗';
+
+    titleLink.appendChild(titleText);
+    titleLink.appendChild(linkIcon);
+    body.appendChild(titleLink);
   } else {
+    const titleEl = document.createElement('div');
+    titleEl.className = 'card-title';
     titleEl.textContent = work.title;
+    body.appendChild(titleEl);
   }
 
-  // Info rows
-  const info = document.createElement('div');
-  info.className = 'card-info';
+  // Tools
+  if (work.tool) {
+    const toolsRow = document.createElement('div');
+    toolsRow.className = 'tools-row';
+    const chip = document.createElement('span');
+    chip.className = 'tool-chip';
+    chip.textContent = work.tool;
+    toolsRow.appendChild(chip);
+    body.appendChild(toolsRow);
+  }
 
-  // TOOLS row
-  info.appendChild(makeInfoRow('TOOLS', work.tool));
-
-  // PROMPT / NOTES row
+  // Prompt / Notes (expandable)
   const textContent = (work.type === 'image' || work.type === 'gallery') ? work.prompt : work.memo;
-  const rowLabel = (work.type === 'image' || work.type === 'gallery') ? 'PROMPT' : 'NOTES';
+  const expandLabel = (work.type === 'image' || work.type === 'gallery')
+    ? 'READ FULL PROMPT →'
+    : 'READ FULL NOTES →';
 
   if (textContent) {
-    info.appendChild(makeExpandableRow(rowLabel, textContent));
+    const preview = document.createElement('div');
+    preview.className = 'card-text-preview';
+    preview.textContent = textContent;
+
+    body.appendChild(preview);
+
+    if (textContent.length > 60) {
+      const expandBtn = document.createElement('button');
+      expandBtn.className = 'expand-btn';
+      expandBtn.textContent = expandLabel;
+
+      const fullText = document.createElement('div');
+      fullText.className = 'card-text-full';
+      fullText.textContent = textContent;
+
+      expandBtn.addEventListener('click', () => {
+        const isOpen = fullText.classList.toggle('open');
+        preview.style.display = isOpen ? 'none' : '';
+        expandBtn.textContent = isOpen ? 'CLOSE ←' : expandLabel;
+      });
+
+      body.appendChild(expandBtn);
+      body.appendChild(fullText);
+    }
   }
 
-  // TAGS row
-  const tagsRow = document.createElement('div');
-  tagsRow.className = 'info-row';
-  const tagsLabel = document.createElement('span');
-  tagsLabel.className = 'info-label';
-  tagsLabel.textContent = 'TAGS';
-  const tagsVal = document.createElement('div');
-  tagsVal.className = 'card-tags';
-  (work.tags || []).forEach(tag => {
-    const t = document.createElement('span');
-    t.className = 'card-tag';
-    t.textContent = tag;
-    tagsVal.appendChild(t);
-  });
-  tagsRow.appendChild(tagsLabel);
-  tagsRow.appendChild(tagsVal);
-  info.appendChild(tagsRow);
+  // Tags
+  if (work.tags && work.tags.length) {
+    const tagRow = document.createElement('div');
+    tagRow.className = 'tag-row';
+    work.tags.forEach(tag => {
+      const t = document.createElement('span');
+      t.className = 'card-tag';
+      t.textContent = '#' + tag;
+      tagRow.appendChild(t);
+    });
+    body.appendChild(tagRow);
+  }
 
-  body.appendChild(metaRow);
-  body.appendChild(titleEl);
-  body.appendChild(info);
-
+  card.appendChild(topbar);
   card.appendChild(thumb);
   card.appendChild(body);
   return card;
-}
-
-function makeInfoRow(label, value) {
-  const row = document.createElement('div');
-  row.className = 'info-row';
-  row.innerHTML = `<span class="info-label">${label}</span><span class="info-value">${value}</span>`;
-  return row;
-}
-
-function makeExpandableRow(label, text) {
-  const row = document.createElement('div');
-  row.className = 'info-row';
-
-  const labelEl = document.createElement('span');
-  labelEl.className = 'info-label';
-  labelEl.textContent = label;
-
-  const valEl = document.createElement('div');
-  valEl.className = 'info-value';
-
-  if (text.length <= 60) {
-    valEl.textContent = text;
-  } else {
-    const preview = document.createElement('span');
-    preview.className = 'info-text';
-    preview.textContent = text;
-
-    const btn = document.createElement('button');
-    btn.className = 'expand-btn';
-    btn.textContent = '全文を表示';
-
-    const full = document.createElement('div');
-    full.className = 'expand-content';
-    full.textContent = text;
-
-    btn.addEventListener('click', () => {
-      const isOpen = full.classList.toggle('open');
-      preview.style.display = isOpen ? 'none' : '';
-      btn.textContent = isOpen ? '閉じる' : '全文を表示';
-    });
-
-    valEl.appendChild(preview);
-    valEl.appendChild(btn);
-    valEl.appendChild(full);
-  }
-
-  row.appendChild(labelEl);
-  row.appendChild(valEl);
-  return row;
 }
 
 // Modal
