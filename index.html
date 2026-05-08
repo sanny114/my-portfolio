@@ -4,102 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>べちこのAIアウトプット集</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
-<aside class="floating-sticker" aria-hidden="true">
-  <svg viewBox="0 0 160 160" width="160" height="160">
-    <defs>
-      <path id="circle-path" d="M 80,80 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"/>
-    </defs>
-    <text class="sticker-text">
-      <textPath href="#circle-path">★ AI OUTPUTS ★ MADE WITH LOVE ★ 2026 ★</textPath>
-    </text>
-    <circle cx="80" cy="80" r="8" fill="#ff8e63"/>
-  </svg>
-</aside>
-
 <header class="site-header">
-  <div class="header-row">
-    <img class="avatar" src="images/avatar.png" alt="Bechiko">
-    <div class="sns-pills">
-      <a href="https://note.com/bechiko0605" target="_blank" rel="noopener" class="sns-pill">↗ note</a>
-      <a href="https://x.com/bechiko0605" target="_blank" rel="noopener" class="sns-pill">↗ X</a>
+  <div class="header-inner">
+    <div class="header-logo">
+      <img class="avatar" src="images/avatar.png" alt="Bechiko">
+      <div class="header-name">
+        <span class="name">Bechiko</span>
+        <span class="subtitle">AI Output Archive</span>
+      </div>
     </div>
-  </div>
-  <div class="big-title">
-    <p class="title-l1">べちこの</p>
-    <p class="title-l2"><span class="ai-box">AI</span> <span class="star">✦</span> アウトプット集</p>
-  </div>
-  <div class="tagline-row">
-    <span class="tagline-dot"></span>
-    <span class="tagline">生成AIで作ったものをまとめています — a personal AI playground</span>
+    <nav class="header-nav">
+      <a href="#works">Works</a>
+      <a href="https://note.com/bechiko0605" target="_blank" rel="noopener">note <span class="ext">↗</span></a>
+      <a href="https://x.com/bechiko0605" target="_blank" rel="noopener">X <span class="ext">↗</span></a>
+    </nav>
   </div>
 </header>
 
-<section class="archive-status">
-  <div class="status-card">
-    <div class="status-head">
-      <span class="status-dot"></span>
-      <span class="status-label">ARCHIVE STATUS</span>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="hero-label">OVERVIEW / 2026</p>
+      <h1 class="hero-title">べちこのAIアウトプット集</h1>
+      <p class="hero-desc">生成AIを用いて制作した画像作品とWebサイトのアーカイブです。使用ツール、プロンプト、制作メモを併記し、再現性と意図を残すことを目的としています。</p>
+      <div class="hero-actions">
+        <a href="#works" class="btn-primary">作品一覧を見る →</a>
+      </div>
     </div>
-    <div class="status-cells">
-      <div class="status-cell cell-white">
-        <span class="cell-label">TOTAL</span>
-        <span class="cell-value" id="stat-total">—</span>
-      </div>
-      <div class="status-cell cell-lime">
-        <span class="cell-label">IMAGES</span>
-        <span class="cell-value" id="stat-images">—</span>
-      </div>
-      <div class="status-cell cell-blue">
-        <span class="cell-label">SITES</span>
-        <span class="cell-value" id="stat-sites">—</span>
-      </div>
-      <div class="status-cell cell-peach">
-        <span class="cell-label">LAST UPDATE</span>
-        <span class="cell-value" id="stat-date">—</span>
+    <div class="hero-right">
+      <div class="stats-panel">
+        <p class="stats-label">ARCHIVE STATUS</p>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-name">Total Works</span>
+            <span class="stat-value" id="stat-total">—</span>
+          </div>
+          <div class="stat">
+            <span class="stat-name">Images</span>
+            <span class="stat-value" id="stat-images">—</span>
+          </div>
+          <div class="stat">
+            <span class="stat-name">Sites</span>
+            <span class="stat-value" id="stat-sites">—</span>
+          </div>
+          <div class="stat">
+            <span class="stat-name">Last Update</span>
+            <span class="stat-value stat-date" id="stat-date">—</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>✦ IMAGES ✦ HTML SITES ✦ PROMPTS ✦ EXPERIMENTS ✦ EVERYDAY MAKING ✦</span>
-    <span>✦ IMAGES ✦ HTML SITES ✦ PROMPTS ✦ EXPERIMENTS ✦ EVERYDAY MAKING ✦</span>
-    <span>✦ IMAGES ✦ HTML SITES ✦ PROMPTS ✦ EXPERIMENTS ✦ EVERYDAY MAKING ✦</span>
-    <span>✦ IMAGES ✦ HTML SITES ✦ PROMPTS ✦ EXPERIMENTS ✦ EVERYDAY MAKING ✦</span>
-  </div>
-</div>
-
-<section class="filters">
-  <div class="filter-row">
-    <span class="filter-arrow">→</span>
+<section class="works-section" id="works">
+  <div class="works-header">
+    <div class="works-title-area">
+      <h2 class="works-title">Works</h2>
+      <span class="works-count" id="works-count"></span>
+    </div>
     <div class="type-filter">
       <button class="type-btn active" data-type="">すべて</button>
       <button class="type-btn" data-type="image">画像</button>
       <button class="type-btn" data-type="html">HTMLサイト</button>
       <button class="type-btn" data-type="slide">スライド</button>
     </div>
-    <span class="works-count" id="works-count"></span>
   </div>
-  <div class="filter-row">
-    <span class="filter-arrow">→</span>
+
+  <div class="tags-row">
+    <span class="tags-label">TAGS</span>
     <div id="tag-filters"></div>
   </div>
+
+  <div class="gallery" id="gallery"></div>
 </section>
 
-<main class="card-grid" id="gallery"></main>
-
 <footer class="site-footer">
-  <span class="footer-star">✦</span>
-  BECHIKO · 2026 · STAY CURIOUS
-  <span class="footer-star">✦</span>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">
+        <img class="avatar avatar-sm" src="images/avatar.png" alt="Bechiko">
+        <span>Bechiko · AI Output Archive</span>
+      </div>
+      <p class="footer-copy">© 2026 Bechiko. All works are personal AI experiments.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://note.com/bechiko0605" target="_blank" rel="noopener">note</a>
+      <a href="https://x.com/bechiko0605" target="_blank" rel="noopener">X (Twitter)</a>
+    </div>
+  </div>
 </footer>
 
 <div id="modal" class="modal" role="dialog" aria-modal="true">
@@ -110,6 +107,6 @@
   <div class="modal-counter" id="modal-counter"></div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
