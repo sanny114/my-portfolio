@@ -231,5 +231,17 @@
     "prompt": "ChatGPTとGeminiでディープリサーチしたあとに、ChatGPTで構成案を壁打ちしたあとにグラレコ風に画像作成。",
     "tags": ["ChatGPT", "work"],
     "published": true
+  },
+  {
+    "id": 18,
+    "type": "html",
+    "title": "七領域をつなぐ知識地図",
+    "tool": "Claude Design + Claude Code",
+    "date": "2026-05",
+    "thumbnail": "images/thumbnails/chishiki-chizu.png",
+    "url": "https://sanny114.github.io/chishiki-chizu/",
+    "memo": "認知心理学・社会心理学・行動経済学・組織論・KM・学習する組織・システム思考の7領域を和文エディトリアルデザインで1ページにまとめた知識地図。Claude Designでプロトタイプを作成し、Claude Codeで実装・GitHub Pages公開。",
+    "tags": ["Claude Code", "Claude Design", "ディープリサーチ"],
+    "published": true
   }
 ]
