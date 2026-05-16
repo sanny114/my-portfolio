@@ -243,5 +243,16 @@
     "memo": "認知心理学・社会心理学・行動経済学・組織論・KM・学習する組織・システム思考の7領域を和文エディトリアルデザインで1ページにまとめた知識地図。Claude Designでプロトタイプを作成し、Claude Codeで実装・GitHub Pages公開。",
     "tags": ["Claude Code", "Claude Design", "ディープリサーチ"],
     "published": true
+  },
+  {
+    "id": 19,
+    "type": "html",
+    "title": "日本地図 都道府県クイズ",
+    "tool": "Claude Code",
+    "date": "2026-05",
+    "url": "https://sanny114.github.io/japan-quiz/",
+    "memo": "小学5年生の娘が都道府県名を覚えるためのクイズアプリ。白地図でハイライトされた県を4択で当てる。3問・10問・20問・47問から選択可。沖縄は左上インセット表示。Claude Codeで設計から実装・GitHub Pages公開まで完全生成。",
+    "tags": ["Claude Code", "Family"],
+    "published": true
   }
 ]
