@@ -255,5 +255,17 @@
     "memo": "小学5年生の娘が都道府県名を覚えるためのクイズアプリ。白地図でハイライトされた県を4択で当てる。3問・10問・20問・47問から選択可。沖縄は左上インセット表示。Claude Codeで設計から実装・GitHub Pages公開まで完全生成。",
     "tags": ["Claude Code", "Family"],
     "published": true
+  },
+  {
+    "id": 20,
+    "type": "html",
+    "title": "復習アプリ",
+    "tool": "Claude Code + ChatGPT",
+    "date": "2026-05",
+    "thumbnail": "images/thumbnails/スクリーンショット 2026-05-19 084700.jpg",
+    "url": "https://sanny114.github.io/my-review-app/",
+    "memo": "娘がテストで繰り返し同じミスをしているのに気づいたことがきっかけ。ChatGPTでアイデア壁打ち・要件定義を行い、Claude Codeで実装。React + Firebaseを採用し、PCとスマホでデータを同期できる復習アプリを1週間でMVP完成。",
+    "tags": ["Claude Code", "ChatGPT", "Family"],
+    "published": true
   }
 ]
