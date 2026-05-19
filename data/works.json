@@ -279,5 +279,17 @@
     "memo": "テクフロのLT会共有のためリサーチしたうえでHTML化。",
     "tags": ["ChatGPT"],
     "published": true
+  },
+  {
+    "id": 22,
+    "type": "html",
+    "title": "生成AI初心者のための実践講座",
+    "tool": "ChatGPT",
+    "date": "2026-05",
+    "thumbnail": "images/thumbnails/スクリーンショット 2026-05-19 221914.jpg",
+    "url": "https://sanny114.github.io/github.io/",
+    "memo": "DXroom登壇のためリサーチしたうえでHTML化。",
+    "tags": ["ChatGPT"],
+    "published": true
   }
 ]
