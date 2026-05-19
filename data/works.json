@@ -267,5 +267,17 @@
     "memo": "娘がテストで繰り返し同じミスをしているのに気づいたことがきっかけ。ChatGPTでアイデア壁打ち・要件定義を行い、Claude Codeで実装。React + Firebaseを採用し、PCとスマホでデータを同期できる復習アプリを1週間でMVP完成。",
     "tags": ["Claude Code", "ChatGPT", "Family"],
     "published": true
+  },
+  {
+    "id": 21,
+    "type": "html",
+    "title": "『#100日チャレンジ』書籍分析",
+    "tool": "ChatGPT",
+    "date": "2026-05",
+    "thumbnail": "images/thumbnails/スクリーンショット 2026-05-19 221549.jpg",
+    "url": "https://sanny114.github.io/100challenge/",
+    "memo": "テクフロのLT会共有のためリサーチしたうえでHTML化。",
+    "tags": ["ChatGPT"],
+    "published": true
   }
 ]
