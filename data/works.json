@@ -291,5 +291,17 @@
     "memo": "DXroom登壇のためリサーチしたうえでHTML化。",
     "tags": ["ChatGPT"],
     "published": true
+  },
+  {
+    "id": 23,
+    "type": "slide",
+    "title": "DXroom「音声情報を徹底的に活かす日常のDX」",
+    "tool": "ChatGPT",
+    "date": "2026-05",
+    "thumbnail": "images/thumbnails/dxroom-20250406.jpg",
+    "url": "https://sanny114.github.io/20250406DXroom/",
+    "memo": "DXroom登壇のためリサーチしたうえでスライド化。",
+    "tags": ["ChatGPT"],
+    "published": true
   }
 ]
