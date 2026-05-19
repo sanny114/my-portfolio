@@ -303,5 +303,17 @@
     "memo": "DXroom登壇のためリサーチしたうえでスライド化。",
     "tags": ["ChatGPT"],
     "published": true
+  },
+  {
+    "id": 24,
+    "type": "html",
+    "title": "吉野敏明氏が提唱する「四毒」理論",
+    "tool": "ChatGPT",
+    "date": "2026-05",
+    "thumbnail": "images/thumbnails/yondoku.jpg",
+    "url": "https://sanny114.github.io/yondoku/",
+    "memo": "リサーチしたうえでHTML化。",
+    "tags": ["ChatGPT", "Family"],
+    "published": true
   }
 ]
