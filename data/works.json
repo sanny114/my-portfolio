@@ -348,5 +348,16 @@
     "prompt": "これまでの私との会話から、私を主人公にした映画のタイトル・キャッチコピー・ジャンル・あらすじ・上映ポスターの雰囲気を作ってください。商業映画レベルで。",
     "tags": ["ChatGPT", "work"],
     "published": true
+  },
+  {
+    "id": 28,
+    "type": "image",
+    "title": "買い物と片付けのループ図",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-06",
+    "image": "images/generated/ChatGPT_KATADUKELOOP_20260605.png",
+    "prompt": "①別アプリで作成したループ図を添付して解説してもらう②イラストにする",
+    "tags": ["ChatGPT", "Family"],
+    "published": true
   }
 ]
