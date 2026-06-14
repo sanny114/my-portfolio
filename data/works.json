@@ -359,5 +359,44 @@
     "prompt": "①別アプリで作成したループ図を添付して解説してもらう②イラストにする",
     "tags": ["ChatGPT", "Family"],
     "published": true
+  },
+  {
+    "id": 29,
+    "type": "image",
+    "title": "コップ1杯の水",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-06",
+    "image": "images/generated/ChatGPT_copChishiki_20260613.png",
+    "prompt": "これをグラレコ風のイラストにして\nなぜ勉強しないといけないのか？ なんで勉強なんかしないといけないの？という子どもの質問に 母は、机にコップを置いて答えた。 「算数」を学べば この中に200mlの水があると 数字で"見える"ようになる。 「理科」を学べば この水は水素と酸素からできている事が知れる。 「社会」を学べば この水がどこからきたのか？がわかり そして、世界にはこの綺麗な水を、 飲む事ができない人たちがいることを知れる。 「美術」を学べば この水の反射を綺麗に描く事ができるようになる。 「音楽」を学べば 同じコップでも水の量で音を変えれることにも気づける。 「技術」を学べば このコップがどんな素材でなぜ漏れないのかがわかる。 「保健体育」を学べば この水が体にどれだけ大切なのか健康を支える命の正体が見えてくる。 「道徳」を学べば この水を誰かと分け合うことの大切さを学べて、思いやりの心が育つ。 「国語」を学べば 今私が話した"全部の意味"を"正しく"理解できるようになる。 「英語」を学べば この話を世界の人と分かち合えるようになる。 「哲学」を学べば この話に何の意味があるのか考えれるようになる。",
+    "tags": ["ChatGPT", "Family"],
+    "published": true
+  },
+  {
+    "id": 30,
+    "type": "gallery",
+    "title": "中島聡メルマガ2026年6月9日分",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-06",
+    "images": [
+      "images/generated/ChatGPT_nakajimasatoshi_20260609①.png",
+      "images/generated/ChatGPT_nakajimasatoshi_20260609②.png",
+      "images/generated/ChatGPT_nakajimasatoshi_20260609③.png",
+      "images/generated/ChatGPT_nakajimasatoshi_20260609④.png",
+      "images/generated/ChatGPT_nakajimasatoshi_20260609⑤.png"
+    ],
+    "prompt": "メルマガを元に解説＆イラスト化",
+    "tags": ["ChatGPT", "work"],
+    "published": true
+  },
+  {
+    "id": 31,
+    "type": "image",
+    "title": "プロフィールアイコン（ミニマルイラスト）",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-06",
+    "image": "images/generated/ChatGPT_profilicon_20260613.png",
+    "prompt": "入力されたプロフィール写真とプロフィール文を分析し、その人物を象徴するThreads・Instagram用プロフィールアイコンを生成してください。\n\n目的は、「顔出ししていないのに、その人が何者なのか一瞬で伝わること」です。\n\nプロフィール写真は髪型、服装、帽子、雰囲気などの参考として使用してください。職業、発信内容、価値提供、ライフスタイルはプロフィール文を最優先で判断してください。\n\nその人物を象徴するモチーフを1つだけ選んでください。主役はモチーフです。ただし人物は添え物ではありません。人物とモチーフの関係性によって、その人らしさを表現してください。",
+    "tags": ["ChatGPT", "Career"],
+    "published": true
   }
 ]
