@@ -398,5 +398,17 @@
     "prompt": "入力されたプロフィール写真とプロフィール文を分析し、その人物を象徴するThreads・Instagram用プロフィールアイコンを生成してください。\n\n目的は、「顔出ししていないのに、その人が何者なのか一瞬で伝わること」です。\n\nプロフィール写真は髪型、服装、帽子、雰囲気などの参考として使用してください。職業、発信内容、価値提供、ライフスタイルはプロフィール文を最優先で判断してください。\n\nその人物を象徴するモチーフを1つだけ選んでください。主役はモチーフです。ただし人物は添え物ではありません。人物とモチーフの関係性によって、その人らしさを表現してください。",
     "tags": ["ChatGPT", "Career"],
     "published": true
+  },
+  {
+    "id": 32,
+    "type": "html",
+    "title": "どの計算？算数ミッション",
+    "tool": "Claude Code",
+    "date": "2026-06",
+    "thumbnail": "images/thumbnails/sansu-trainer.png",
+    "url": "https://sanny114.github.io/sansu-trainer/",
+    "memo": "小学5年生の娘が算数の文章問題でかけ算・わり算の判断に迷うという課題から開発。文章題を読んで使う計算を当てる10問構成のトレーニングアプリ。Claude Designでデザイン方針を検討し、Claude Codeで実装。CodeXで生成したネコのマスコットや紙工作風のイラスト素材を組み込み、GitHub Pagesで公開。",
+    "tags": ["Claude Code", "Family"],
+    "published": true
   }
 ]
