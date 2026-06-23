@@ -410,5 +410,17 @@
     "memo": "小学5年生の娘が算数の文章問題でかけ算・わり算の判断に迷うという課題から開発。文章題を読んで使う計算を当てる10問構成のトレーニングアプリ。Claude Designでデザイン方針を検討し、Claude Codeで実装。CodeXで生成したネコのマスコットや紙工作風のイラスト素材を組み込み、GitHub Pagesで公開。",
     "tags": ["Claude Code", "Family"],
     "published": true
+  },
+  {
+    "id": 33,
+    "type": "html",
+    "title": "生成AI初心者のための実践講座",
+    "tool": "ChatGPT",
+    "date": "2026-06",
+    "thumbnail": "images/thumbnails/github-io-dxroom.png",
+    "url": "https://sanny114.github.io/github.io/",
+    "memo": "DXroomで開催した「生成AI初心者のための実践講座」の資料。「迷っている暇があったら使ってみよう！」をテーマに、よくある質問（触ったことがない、うまく使えていない等）から入り、導入から実践までの流れをHTMLスライド形式でまとめ、ChatGPTで作成してGitHub Pagesで公開。",
+    "tags": ["ChatGPT", "Career"],
+    "published": true
   }
 ]
