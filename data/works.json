@@ -414,13 +414,13 @@
   {
     "id": 33,
     "type": "html",
-    "title": "生成AI初心者のための実践講座",
+    "title": "魚の群れシミュレーション",
     "tool": "ChatGPT",
     "date": "2026-06",
-    "thumbnail": "images/thumbnails/github-io-dxroom.png",
-    "url": "https://sanny114.github.io/github.io/",
-    "memo": "DXroomで開催した「生成AI初心者のための実践講座」の資料。「迷っている暇があったら使ってみよう！」をテーマに、よくある質問（触ったことがない、うまく使えていない等）から入り、導入から実践までの流れをHTMLスライド形式でまとめ、ChatGPTで作成してGitHub Pagesで公開。",
-    "tags": ["ChatGPT", "Career"],
+    "thumbnail": "images/thumbnails/fish-simulation.png",
+    "url": "https://sanny114.github.io/fish/",
+    "memo": "魚の群れの動きをシミュレーションするインタラクティブなページ。魚の数・群れの中心へ向かう傾向・離れる傾向・方向揃えなどのパラメータを調整できる。ChatGPTで作成してGitHub Pagesで公開。",
+    "tags": ["ChatGPT"],
     "published": true
   }
 ]
