@@ -167,7 +167,10 @@
     "date": "2026-04",
     "image": "images/generated/ChatGPT_butakari20260429.png",
     "prompt": "①レシピを手入力②レシピを画像で作成して",
-    "tags": ["ChatGPT", "Family"],
+    "tags": [
+      "ChatGPT",
+      "Family"
+    ],
     "published": true
   },
   {
@@ -178,7 +181,10 @@
     "date": "2026-05",
     "image": "images/generated/ChatGPT gyudon20260502.png",
     "prompt": "①レシピをChatGPTと壁打ち②レシピを画像にして",
-    "tags": ["ChatGPT", "Family"],
+    "tags": [
+      "ChatGPT",
+      "Family"
+    ],
     "published": true
   },
   {
@@ -189,7 +195,10 @@
     "date": "2026-05",
     "image": "images/generated/ChatGPT_PowerAppsPOINT20260502.png",
     "prompt": "①MicrosoftのPowerAppsの見た目を良くするコツってありますか②ポイントをグラレコ風に画像にまとめて",
-    "tags": ["ChatGPT", "work"],
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
     "published": true
   },
   {
@@ -200,7 +209,10 @@
     "date": "2026-05",
     "image": "images/generated/ChatGPT_copilot20260502.png",
     "prompt": "ChatGPTとGeminiでCopilotについてディープリサーチ。ChatGPTにて構成を相談したうえでグラレコ風にまとめてもらう",
-    "tags": ["ChatGPT", "work"],
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
     "published": true
   },
   {
@@ -211,7 +223,10 @@
     "date": "2026-05",
     "image": "images/generated/ChatGPT_mabodofu20260505.png",
     "prompt": "①レシピをChatGPTと壁打ち②レシピを画像にして",
-    "tags": ["ChatGPT", "Family"],
+    "tags": [
+      "ChatGPT",
+      "Family"
+    ],
     "published": true
   },
   {
@@ -229,7 +244,10 @@
       "images/generated/ChatGPT_copilot6_20260505.png"
     ],
     "prompt": "ChatGPTとGeminiでディープリサーチしたあとに、ChatGPTで構成案を壁打ちしたあとにグラレコ風に画像作成。",
-    "tags": ["ChatGPT", "work"],
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
     "published": true
   },
   {
@@ -241,7 +259,11 @@
     "thumbnail": "images/thumbnails/chishiki-chizu.png",
     "url": "https://sanny114.github.io/chishiki-chizu/",
     "memo": "認知心理学・社会心理学・行動経済学・組織論・KM・学習する組織・システム思考の7領域を和文エディトリアルデザインで1ページにまとめた知識地図。Claude Designでプロトタイプを作成し、Claude Codeで実装・GitHub Pages公開。",
-    "tags": ["Claude Code", "Claude Design", "ディープリサーチ"],
+    "tags": [
+      "Claude Code",
+      "Claude Design",
+      "ディープリサーチ"
+    ],
     "published": true
   },
   {
@@ -253,7 +275,10 @@
     "thumbnail": "images/thumbnails/スクリーンショット 2026-05-19 081940.jpg",
     "url": "https://sanny114.github.io/japan-quiz/",
     "memo": "小学5年生の娘が都道府県名を覚えるためのクイズアプリ。白地図でハイライトされた県を4択で当てる。3問・10問・20問・47問から選択可。沖縄は左上インセット表示。Claude Codeで設計から実装・GitHub Pages公開まで完全生成。",
-    "tags": ["Claude Code", "Family"],
+    "tags": [
+      "Claude Code",
+      "Family"
+    ],
     "published": true
   },
   {
@@ -265,7 +290,11 @@
     "thumbnail": "images/thumbnails/スクリーンショット 2026-05-19 084700.jpg",
     "url": "https://sanny114.github.io/my-review-app/",
     "memo": "娘がテストで繰り返し同じミスをしているのに気づいたことがきっかけ。ChatGPTでアイデア壁打ち・要件定義を行い、Claude Codeで実装。React + Firebaseを採用し、PCとスマホでデータを同期できる復習アプリを1週間でMVP完成。",
-    "tags": ["Claude Code", "ChatGPT", "Family"],
+    "tags": [
+      "Claude Code",
+      "ChatGPT",
+      "Family"
+    ],
     "published": true
   },
   {
@@ -277,7 +306,9 @@
     "thumbnail": "images/thumbnails/スクリーンショット 2026-05-19 221549.jpg",
     "url": "https://sanny114.github.io/100challenge/",
     "memo": "テクフロのLT会共有のためリサーチしたうえでHTML化。",
-    "tags": ["ChatGPT"],
+    "tags": [
+      "ChatGPT"
+    ],
     "published": true
   },
   {
@@ -289,7 +320,9 @@
     "thumbnail": "images/thumbnails/スクリーンショット 2026-05-19 221914.jpg",
     "url": "https://sanny114.github.io/github.io/",
     "memo": "DXroom登壇のためリサーチしたうえでHTML化。",
-    "tags": ["ChatGPT"],
+    "tags": [
+      "ChatGPT"
+    ],
     "published": true
   },
   {
@@ -301,7 +334,9 @@
     "thumbnail": "images/thumbnails/dxroom-20250406.jpg",
     "url": "https://sanny114.github.io/20250406DXroom/",
     "memo": "DXroom登壇のためリサーチしたうえでスライド化。",
-    "tags": ["ChatGPT"],
+    "tags": [
+      "ChatGPT"
+    ],
     "published": true
   },
   {
@@ -313,7 +348,10 @@
     "thumbnail": "images/thumbnails/yondoku.jpg",
     "url": "https://sanny114.github.io/yondoku/",
     "memo": "リサーチしたうえでHTML化。",
-    "tags": ["ChatGPT", "Family"],
+    "tags": [
+      "ChatGPT",
+      "Family"
+    ],
     "published": true
   },
   {
@@ -324,7 +362,10 @@
     "date": "2026-05",
     "image": "images/generated/ChatGPT_kotobanoondo_20260525.png",
     "prompt": "これまでの私のチャットログを参照し、以下を分析して整理してください。\n\n言葉の温度\n人との距離感\nよく扱うテーマ\n美意識\n仕事や活動の方向性\n周囲に与える印象\n強み\n矛盾\n葛藤\n無意識に守っているもの\n本当は手に入れたいもの\n人生で担っている役割\n\nその分析をもとに私が無意識に避けてることを深いところまで分析して、その理由を教えてください。\nそして、それ避け続けると起こりうる未来も言及してほしい。\n\n忖度なしで分析すること。\n占いとしてではなく、真理を述べること。\n事実と憶測を分けて述べること。\n抽象的な表現や曖昧な表現はしない。\n\n分析の結果を踏まえてビジネスする上で強みに変換できることをひとつ具体的な理由含めておしえてくれ。",
-    "tags": ["ChatGPT", "Career"],
+    "tags": [
+      "ChatGPT",
+      "Career"
+    ],
     "published": true
   },
   {
@@ -335,7 +376,10 @@
     "date": "2026-06",
     "image": "images/generated/ChatGPT_SETSUMEISEKININROOP_20260601.png",
     "prompt": "①本部長への数字の説明責任がミドルになっていまっていることについて、システム思考でループ図をかいてみました。ここから読み取れることを文章にしてください。②この関係者たちにはどんなメンタルモデルがある？③構造とメンタルモデルをまとめてイラストにして",
-    "tags": ["ChatGPT", "work"],
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
     "published": true
   },
   {
@@ -346,7 +390,10 @@
     "date": "2026-05",
     "image": "images/generated/ChatGPT_eigaposta20260530.png",
     "prompt": "これまでの私との会話から、私を主人公にした映画のタイトル・キャッチコピー・ジャンル・あらすじ・上映ポスターの雰囲気を作ってください。商業映画レベルで。",
-    "tags": ["ChatGPT", "work"],
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
     "published": true
   },
   {
@@ -357,7 +404,10 @@
     "date": "2026-06",
     "image": "images/generated/ChatGPT_KATADUKELOOP_20260605.png",
     "prompt": "①別アプリで作成したループ図を添付して解説してもらう②イラストにする",
-    "tags": ["ChatGPT", "Family"],
+    "tags": [
+      "ChatGPT",
+      "Family"
+    ],
     "published": true
   },
   {
@@ -368,7 +418,10 @@
     "date": "2026-06",
     "image": "images/generated/ChatGPT_copChishiki_20260613.png",
     "prompt": "これをグラレコ風のイラストにして\nなぜ勉強しないといけないのか？ なんで勉強なんかしないといけないの？という子どもの質問に 母は、机にコップを置いて答えた。 「算数」を学べば この中に200mlの水があると 数字で\"見える\"ようになる。 「理科」を学べば この水は水素と酸素からできている事が知れる。 「社会」を学べば この水がどこからきたのか？がわかり そして、世界にはこの綺麗な水を、 飲む事ができない人たちがいることを知れる。 「美術」を学べば この水の反射を綺麗に描く事ができるようになる。 「音楽」を学べば 同じコップでも水の量で音を変えれることにも気づける。 「技術」を学べば このコップがどんな素材でなぜ漏れないのかがわかる。 「保健体育」を学べば この水が体にどれだけ大切なのか健康を支える命の正体が見えてくる。 「道徳」を学べば この水を誰かと分け合うことの大切さを学べて、思いやりの心が育つ。 「国語」を学べば 今私が話した\"全部の意味\"を\"正しく\"理解できるようになる。 「英語」を学べば この話を世界の人と分かち合えるようになる。 「哲学」を学べば この話に何の意味があるのか考えれるようになる。",
-    "tags": ["ChatGPT", "Family"],
+    "tags": [
+      "ChatGPT",
+      "Family"
+    ],
     "published": true
   },
   {
@@ -385,7 +438,10 @@
       "images/generated/ChatGPT_nakajimasatoshi_20260609⑤.png"
     ],
     "prompt": "メルマガを元に解説＆イラスト化",
-    "tags": ["ChatGPT", "work"],
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
     "published": true
   },
   {
@@ -396,7 +452,10 @@
     "date": "2026-06",
     "image": "images/generated/ChatGPT_profilicon_20260613.png",
     "prompt": "入力されたプロフィール写真とプロフィール文を分析し、その人物を象徴するThreads・Instagram用プロフィールアイコンを生成してください。\n\n目的は、「顔出ししていないのに、その人が何者なのか一瞬で伝わること」です。\n\nプロフィール写真は髪型、服装、帽子、雰囲気などの参考として使用してください。職業、発信内容、価値提供、ライフスタイルはプロフィール文を最優先で判断してください。\n\nその人物を象徴するモチーフを1つだけ選んでください。主役はモチーフです。ただし人物は添え物ではありません。人物とモチーフの関係性によって、その人らしさを表現してください。",
-    "tags": ["ChatGPT", "Career"],
+    "tags": [
+      "ChatGPT",
+      "Career"
+    ],
     "published": true
   },
   {
@@ -408,7 +467,10 @@
     "thumbnail": "images/thumbnails/sansu-trainer.png",
     "url": "https://sanny114.github.io/sansu-trainer/",
     "memo": "小学5年生の娘が算数の文章問題でかけ算・わり算の判断に迷うという課題から開発。文章題を読んで使う計算を当てる10問構成のトレーニングアプリ。Claude Designでデザイン方針を検討し、Claude Codeで実装。CodeXで生成したネコのマスコットや紙工作風のイラスト素材を組み込み、GitHub Pagesで公開。",
-    "tags": ["Claude Code", "Family"],
+    "tags": [
+      "Claude Code",
+      "Family"
+    ],
     "published": true
   },
   {
@@ -420,7 +482,24 @@
     "thumbnail": "images/thumbnails/fish-simulation.png",
     "url": "https://sanny114.github.io/fish/",
     "memo": "魚の群れの動きをシミュレーションするインタラクティブなページ。魚の数・群れの中心へ向かう傾向・離れる傾向・方向揃えなどのパラメータを調整できる。ChatGPTで作成してGitHub Pagesで公開。",
-    "tags": ["ChatGPT"],
+    "tags": [
+      "ChatGPT"
+    ],
+    "published": true
+  },
+  {
+    "id": 34,
+    "type": "html",
+    "title": "ファミコン風マリオゲーム",
+    "tool": "Claude Code",
+    "date": "2026-07",
+    "thumbnail": "images/thumbnails/mario-game.png",
+    "url": "https://sanny114.github.io/mario-game/",
+    "memo": "Claude Codeで制作したブラウザゲーム。3つのワールド（地上・地下・雲の上）を冒険し、コイン全取得＆敵全滅でクリア。スマホのタッチ操作対応。",
+    "tags": [
+      "Claude Code",
+      "Family"
+    ],
     "published": true
   }
 ]
