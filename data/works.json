@@ -501,5 +501,20 @@
       "Family"
     ],
     "published": true
+  },
+  {
+    "id": 35,
+    "type": "html",
+    "title": "ねこ育成ゲーム",
+    "tool": "Claude Code",
+    "date": "2026-07",
+    "thumbnail": "images/thumbnails/cat-ikusei-game.png",
+    "url": "https://sanny114.github.io/cat-ikusei-game/",
+    "memo": "娘が途中まで作っていたHTML/CSS/JSのねこ育成ゲームを引き継いで完成。お世話・レベル・図鑑・遊び道具などのゲームロジックを実装し、プレイフィードバックを反映しながら改善。タブレット・PC向けのレスポンシブレイアウトも追加してGitHub Pagesで公開。",
+    "tags": [
+      "Claude Code",
+      "Family"
+    ],
+    "published": true
   }
 ]
