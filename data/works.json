@@ -516,5 +516,61 @@
       "Family"
     ],
     "published": true
+  },
+  {
+    "id": 36,
+    "type": "image",
+    "title": "ByteDanceが自社AI CPUを作る理由",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-06",
+    "image": "images/generated/ChatGPT_nakajimasatoshi_20260609⑥.png",
+    "prompt": "①中島聡さんのメルマガ記事を読んで内容を整理してもらう。②グラレコ風のインフォグラフィックにまとめて。",
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
+    "published": true
+  },
+  {
+    "id": 37,
+    "type": "image",
+    "title": "上司とのすれ違いを乗り越えて、チームで前へ",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-07",
+    "image": "images/generated/ChatGPT_ROOP1_202600711.png",
+    "prompt": "①上司とのすれ違いの経緯をChatGPTに相談。②ここまで話したことを1枚の画像にインフォグラフィック形式でまとめて。",
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
+    "published": true
+  },
+  {
+    "id": 38,
+    "type": "image",
+    "title": "上司とのすれ違いのシステム思考ループ図",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-07",
+    "image": "images/generated/ChatGPT_ROOP2_202600711.png",
+    "prompt": "①同じ状況をシステム思考でループ図にしてもらう。②悪循環と好循環を対比したイラストにして。",
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
+    "published": true
+  },
+  {
+    "id": 39,
+    "type": "image",
+    "title": "同僚との関係のループ図",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-08",
+    "image": "images/generated/ChatGPT_roop_20260828.png",
+    "prompt": "①同僚との関係をシステム思考のループ図で整理。②関係者のメンタルモデルとあわせてイラストにして。",
+    "tags": [
+      "ChatGPT",
+      "work"
+    ],
+    "published": true
   }
 ]
