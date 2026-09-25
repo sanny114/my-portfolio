@@ -572,5 +572,20 @@
       "work"
     ],
     "published": true
+  },
+  {
+    "id": 40,
+    "type": "html",
+    "title": "Claude — Motion Reel 2026（15秒モーショングラフィックス）",
+    "tool": "Claude Code",
+    "date": "2026-09",
+    "thumbnail": "images/thumbnails/motion-reel.jpg",
+    "url": "https://sanny114.github.io/motion-reel/",
+    "memo": "SNSで見かけた「あなたがどれほど素晴らしいモーションデザイナーかを示す15秒のショーリールを作って」というプロンプトをClaude Codeで実行。映像はHTML Canvasで1フレームずつコードで描き、Playwrightで書き出してffmpegでMP4化。120 BPMに合わせた効果音もPythonで合成。GitHub Pagesで公開。",
+    "tags": [
+      "Claude Code",
+      "Motion"
+    ],
+    "published": true
   }
 ]
