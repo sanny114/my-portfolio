@@ -587,5 +587,20 @@
       "Motion"
     ],
     "published": true
+  },
+  {
+    "id": 41,
+    "type": "html",
+    "title": "AI勉強会 中級編 第2回「Claude Design」オープニング（10秒）",
+    "tool": "Claude Code",
+    "date": "2026-09",
+    "thumbnail": "images/thumbnails/chukyu2-opening.jpg",
+    "url": "https://sanny114.github.io/chukyu2-opening/",
+    "memo": "サロン向けAI勉強会 中級編 第2回の冒頭で流す10秒のオープニング映像。回のテーマ「見た目は、丸投げしていい」を、メモ書きを丸めて放り投げるとデザインされた姿で返ってくる動きにした。120 BPMの音ハメとキネティックタイポグラフィ。ショーリールで作ったmotion-videoスキル（絵コンテ→静止画確認→書き出し）で制作。GitHub Pagesで公開。",
+    "tags": [
+      "Claude Code",
+      "Motion"
+    ],
+    "published": true
   }
 ]
