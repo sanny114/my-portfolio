@@ -602,5 +602,20 @@
       "Motion"
     ],
     "published": true
+  },
+  {
+    "id": 42,
+    "type": "html",
+    "title": "Claude Code 紹介リール（15秒モーショングラフィックス）",
+    "tool": "Claude Code",
+    "date": "2026-09",
+    "thumbnail": "images/thumbnails/claude-code-reel.jpg",
+    "url": "https://sanny114.github.io/claude-code-reel/",
+    "memo": "Claude Codeを知らない人に向けた15秒のショーリール。主役は点滅するカーソルひとつで、Enterを押すとカーソルがドット絵の相棒に変わり、デスクトップ整理・売上グラフ・議事録の要約・Webページ・メールの下書きを次々に片付ける。締めは「言葉で頼めば、仕事が進む。」。motion-videoスキルで絵コンテ→静止画確認→書き出しの順に制作。120 BPMの音ハメ、マッチカット、効果音もPythonで合成。GitHub Pagesで公開。",
+    "tags": [
+      "Claude Code",
+      "Motion"
+    ],
+    "published": true
   }
 ]
