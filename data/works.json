@@ -617,5 +617,21 @@
       "Motion"
     ],
     "published": true
+  },
+  {
+    "id": 43,
+    "type": "html",
+    "title": "算数アニメーション「同じ量、いろいろな表し方」（整数・分数・小数、3分40秒）",
+    "tool": "Claude Code",
+    "date": "2026-10",
+    "thumbnail": "images/thumbnails/sansu-bunsu-shosu.jpg",
+    "url": "https://sanny114.github.io/sansu-animation/bunsu-shosu/",
+    "memo": "小学5年生の子ども向けに作った算数の解説動画。板チョコ1枚を「1」と決めて、半分のチョコに「1/2枚」と「0.5枚」の二つの名前が付くところから、整数・分数・小数が同じ量の別の名前だと分かる流れ。分ける線はオレンジ、測る目盛りは青と色を分け、最後は数直線で同じ量が同じ場所に来ることを見せる。台本を書いたあとはClaude Codeで、ナレーション（合成音声、単語ごとの読み上げ時刻に画面を同期）・HTML Canvasの描画・効果音とBGMの合成・MP4書き出しまで行い、静止画一覧で確認しながら直した。GitHub Pagesで公開。",
+    "tags": [
+      "Claude Code",
+      "Family",
+      "Motion"
+    ],
+    "published": true
   }
 ]
