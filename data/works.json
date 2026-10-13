@@ -649,5 +649,35 @@
       "Motion"
     ],
     "published": true
+  },
+  {
+    "id": 45,
+    "type": "html",
+    "title": "国語アニメーション「気持ち探偵になろう！」（物語の気持ちの読み取り、1分10秒）",
+    "tool": "Claude Code",
+    "date": "2026-10",
+    "thumbnail": "images/thumbnails/kokugo-kimochi-tantei.jpg",
+    "url": "https://sanny114.github.io/sansu-animation/kimochi-tantei/",
+    "memo": "小学5年生の子ども向けに作った国語の解説動画。物語の主人公の気持ちを「自分なら」ではなく本文の手がかりから読み取る手順を、ミオと探偵のブックの掛け合いで見せる。「何が起きた？」「どんな反応？」「なぜ？」の順に本文へ下線を引き、最後に答えのもとになる言葉を確かめる流れ。台本・絵コンテ・イラストを用意したあとはClaude Codeで、声の合成（Gemini TTS、役ごとに声と演技を指定）・HTML Canvasの描画・効果音とBGMの合成・MP4書き出しまで行い、静止画一覧と音つきの下見で確認しながら直した。GitHub Pagesで公開。",
+    "tags": [
+      "Claude Code",
+      "Gemini",
+      "Family",
+      "Motion"
+    ],
+    "published": true
+  },
+  {
+    "id": 46,
+    "type": "image",
+    "title": "GoogleWorkspace×Claude",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-10",
+    "image": "images/generated/ChatGPT_GoogleWorkspace×Claude_20261010.png",
+    "prompt": "記事を調査してイラスト化しました。",
+    "tags": [
+      "ChatGPT"
+    ],
+    "published": true
   }
 ]
