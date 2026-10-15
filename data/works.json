@@ -679,5 +679,20 @@
       "ChatGPT"
     ],
     "published": true
+  },
+  {
+    "id": 47,
+    "type": "html",
+    "title": "因果ループ図ビルダー",
+    "tool": "Claude (Artifacts)",
+    "date": "2026-10",
+    "thumbnail": "images/thumbnails/cld-builder.jpg",
+    "url": "https://claude.ai/public/artifacts/be9c2e3e-308e-4d84-9097-31d9ef213022",
+    "memo": "いま起きていることと関係していそうな要素を書き出すと、AIが質問しながら因果ループ図に整理してくれるツール。「書き出す→問い直す→図にする→直す」の4ステップで進む。claude.aiのアーティファクトで作成し、公開リンクで共有。",
+    "tags": [
+      "フロー図",
+      "work"
+    ],
+    "published": true
   }
 ]
