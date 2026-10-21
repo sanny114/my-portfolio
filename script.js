@@ -3,6 +3,7 @@ let allTags = [];
 let activeTag = null;
 let activeType = '';
 let sortOrder = 'new';
+let keyword = '';
 let galleryImages = [];
 let galleryIndex = 0;
 
@@ -27,6 +28,8 @@ function readStateFromUrl() {
   activeType = ['', 'image', 'html', 'slide'].includes(type) ? type : '';
   activeTag = tag && allTags.includes(tag) ? tag : null;
   sortOrder = params.get('sort') === 'old' ? 'old' : 'new';
+  keyword = params.get('q') || '';
+  document.getElementById('search-input').value = keyword;
   document.querySelectorAll('.type-btn').forEach(b => b.classList.toggle('active', b.dataset.type === activeType));
   document.getElementById('sort-select').value = sortOrder;
 }
@@ -35,6 +38,7 @@ function writeStateToUrl() {
   const params = new URLSearchParams();
   if (activeType) params.set('type', activeType);
   if (activeTag) params.set('tag', activeTag);
+  if (keyword.trim()) params.set('q', keyword.trim());
   if (sortOrder !== 'new') params.set('sort', sortOrder);
   const query = params.toString();
   history.replaceState(null, '', location.pathname + (query ? '?' + query : '') + location.hash);
@@ -45,6 +49,21 @@ function matchesType(work, type) {
   if (!type) return true;
   if (type === 'image') return work.type === 'image' || work.type === 'gallery';
   return work.type === type;
+}
+
+// 全角・半角、大文字・小文字、ひらがな・カタカナの違いを無視して比べる
+function normalize(text) {
+  return String(text || '').normalize('NFKC').toLowerCase()
+    .replace(/[\u3041-\u3096]/g, ch => String.fromCharCode(ch.charCodeAt(0) + 0x60));
+}
+
+// タイトル・ツール・プロンプト/メモ・タグのどこかに、
+// 入力したキーワード（スペース区切りなら全部）が含まれる作品を残す
+function matchesKeyword(work) {
+  const words = normalize(keyword).split(/\s+/).filter(Boolean);
+  if (words.length === 0) return true;
+  const haystack = normalize([work.title, work.tool, work.prompt, work.memo, (work.tags || []).join(' ')].join(' '));
+  return words.every(word => haystack.includes(word));
 }
 
 function setTag(tag) {
@@ -70,7 +89,7 @@ function renderTagButtons() {
   container.innerHTML = '';
 
   // 件数は今の種類フィルターに合わせて数える
-  const base = allWorks.filter(w => w.published && matchesType(w, activeType));
+  const base = allWorks.filter(w => w.published && matchesType(w, activeType) && matchesKeyword(w));
 
   const makeBtn = (label, tag, count) => {
     const btn = document.createElement('button');
@@ -111,6 +130,7 @@ function renderGallery() {
     if (!w.published) return false;
     if (activeTag && !(w.tags || []).includes(activeTag)) return false;
     if (!matchesType(w, activeType)) return false;
+    if (!matchesKeyword(w)) return false;
     return true;
   }));
 
@@ -128,6 +148,8 @@ function renderGallery() {
     reset.addEventListener('click', () => {
       activeTag = null;
       activeType = '';
+      keyword = '';
+      document.getElementById('search-input').value = '';
       document.querySelectorAll('.type-btn').forEach(b => b.classList.toggle('active', b.dataset.type === ''));
       renderGallery();
     });
@@ -374,6 +396,18 @@ document.querySelectorAll('.type-btn').forEach(btn => {
     btn.classList.add('active');
     renderGallery();
   });
+});
+
+// Keyword search（日本語の変換中は確定するまで待つ）
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('input', e => {
+  if (e.isComposing) return;
+  keyword = searchInput.value;
+  renderGallery();
+});
+searchInput.addEventListener('compositionend', () => {
+  keyword = searchInput.value;
+  renderGallery();
 });
 
 // Sort
