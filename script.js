@@ -4,6 +4,10 @@ let activeTag = null;
 let activeType = '';
 let sortOrder = 'new';
 let keyword = '';
+
+// ツール名のタグ。ここに無いタグは「テーマ」の段に表示される。
+// 新しいツールのタグを追加したら、ここにも名前を足す。
+const TOOL_TAGS = ['ChatGPT', 'Claude', 'Claude Code', 'Claude Design', 'Gemini', 'NotebookLM'];
 let galleryImages = [];
 let galleryIndex = 0;
 
@@ -26,7 +30,8 @@ function readStateFromUrl() {
   const type = params.get('type') || '';
   const tag = params.get('tag');
   activeType = ['', 'image', 'html', 'slide'].includes(type) ? type : '';
-  activeTag = tag && allTags.includes(tag) ? tag : null;
+  // 大文字・小文字の違いは無視（以前の ?tag=work のリンクも開けるように）
+  activeTag = tag ? (allTags.find(t => t.toLowerCase() === tag.toLowerCase()) || null) : null;
   sortOrder = params.get('sort') === 'old' ? 'old' : 'new';
   keyword = params.get('q') || '';
   document.getElementById('search-input').value = keyword;
@@ -88,10 +93,25 @@ function renderTagButtons() {
   const container = document.getElementById('tag-filters');
   container.innerHTML = '';
 
+  const makeGroup = (label) => {
+    const row = document.createElement('div');
+    row.className = 'tags-row';
+    const labelEl = document.createElement('span');
+    labelEl.className = 'tags-label';
+    labelEl.textContent = label;
+    const list = document.createElement('div');
+    list.className = 'tag-list';
+    row.append(labelEl, list);
+    container.appendChild(row);
+    return list;
+  };
+  const toolList = makeGroup('TOOLS');
+  const themeList = makeGroup('THEMES');
+
   // 件数は今の種類フィルターに合わせて数える
   const base = allWorks.filter(w => w.published && matchesType(w, activeType) && matchesKeyword(w));
 
-  const makeBtn = (label, tag, count) => {
+  const makeBtn = (list, label, tag, count) => {
     const btn = document.createElement('button');
     btn.className = 'tag-btn' + (activeTag === tag ? ' active' : '');
     btn.type = 'button';
@@ -104,11 +124,14 @@ function renderTagButtons() {
     btn.appendChild(c);
     if (count === 0 && activeTag !== tag) btn.disabled = true;
     btn.addEventListener('click', () => setTag(tag === null || activeTag === tag ? null : tag));
-    container.appendChild(btn);
+    list.appendChild(btn);
   };
 
-  makeBtn('All', null, base.length);
-  allTags.forEach(tag => makeBtn(tag, tag, base.filter(w => (w.tags || []).includes(tag)).length));
+  makeBtn(toolList, 'All', null, base.length);
+  allTags.forEach(tag => {
+    const list = TOOL_TAGS.includes(tag) ? toolList : themeList;
+    makeBtn(list, tag, tag, base.filter(w => (w.tags || []).includes(tag)).length);
+  });
 }
 
 function sortWorks(works) {
@@ -252,7 +275,9 @@ function createCard(work) {
   tagsLabel.textContent = 'TAGS';
   const tagsVal = document.createElement('div');
   tagsVal.className = 'card-tags';
-  (work.tags || []).forEach(tag => {
+  // タグ欄と同じ順番（ツール → テーマ）で並べる
+  const order = tag => { const i = allTags.indexOf(tag); return i === -1 ? allTags.length : i; };
+  (work.tags || []).slice().sort((a, b) => order(a) - order(b)).forEach(tag => {
     // カード内のタグを押すと、そのタグで絞り込む
     const t = document.createElement('button');
     t.type = 'button';
