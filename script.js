@@ -13,8 +13,9 @@ let galleryIndex = 0;
 
 async function loadData() {
   const [worksRes, tagsRes] = await Promise.all([
-    fetch('data/works.json'),
-    fetch('data/tags.json')
+    // 毎回サーバーに新しい版があるか確認する（古いデータの使い回しを防ぐ）
+    fetch('data/works.json', { cache: 'no-cache' }),
+    fetch('data/tags.json', { cache: 'no-cache' })
   ]);
   allWorks = await worksRes.json();
   allTags = await tagsRes.json();
