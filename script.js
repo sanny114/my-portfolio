@@ -2,6 +2,7 @@ let allWorks = [];
 let allTags = [];
 let activeTag = null;
 let activeType = '';
+let sortOrder = 'new';
 let galleryImages = [];
 let galleryIndex = 0;
 
@@ -13,8 +14,41 @@ async function loadData() {
   allWorks = await worksRes.json();
   allTags = await tagsRes.json();
 
+  readStateFromUrl();
   renderStats();
-  renderTagButtons();
+  renderGallery();
+}
+
+// 絞り込み・並び順をURLに残す（リロードやリンク共有で同じ表示になる）
+function readStateFromUrl() {
+  const params = new URLSearchParams(location.search);
+  const type = params.get('type') || '';
+  const tag = params.get('tag');
+  activeType = ['', 'image', 'html', 'slide'].includes(type) ? type : '';
+  activeTag = tag && allTags.includes(tag) ? tag : null;
+  sortOrder = params.get('sort') === 'old' ? 'old' : 'new';
+  document.querySelectorAll('.type-btn').forEach(b => b.classList.toggle('active', b.dataset.type === activeType));
+  document.getElementById('sort-select').value = sortOrder;
+}
+
+function writeStateToUrl() {
+  const params = new URLSearchParams();
+  if (activeType) params.set('type', activeType);
+  if (activeTag) params.set('tag', activeTag);
+  if (sortOrder !== 'new') params.set('sort', sortOrder);
+  const query = params.toString();
+  history.replaceState(null, '', location.pathname + (query ? '?' + query : '') + location.hash);
+}
+
+// 「画像」には複数枚のギャラリー作品も含める
+function matchesType(work, type) {
+  if (!type) return true;
+  if (type === 'image') return work.type === 'image' || work.type === 'gallery';
+  return work.type === type;
+}
+
+function setTag(tag) {
+  activeTag = tag;
   renderGallery();
 }
 
@@ -35,60 +69,85 @@ function renderTagButtons() {
   const container = document.getElementById('tag-filters');
   container.innerHTML = '';
 
-  const allBtn = document.createElement('button');
-  allBtn.className = 'tag-btn active';
-  allBtn.textContent = 'All';
-  allBtn.addEventListener('click', () => {
-    activeTag = null;
-    document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-    allBtn.classList.add('active');
-    renderGallery();
-  });
-  container.appendChild(allBtn);
+  // 件数は今の種類フィルターに合わせて数える
+  const base = allWorks.filter(w => w.published && matchesType(w, activeType));
 
-  allTags.forEach(tag => {
+  const makeBtn = (label, tag, count) => {
     const btn = document.createElement('button');
-    btn.className = 'tag-btn';
-    btn.textContent = tag;
-    btn.addEventListener('click', () => {
-      activeTag = activeTag === tag ? null : tag;
-      document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-      if (activeTag) {
-        btn.classList.add('active');
-      } else {
-        allBtn.classList.add('active');
-      }
-      renderGallery();
-    });
+    btn.className = 'tag-btn' + (activeTag === tag ? ' active' : '');
+    btn.type = 'button';
+    btn.setAttribute('aria-pressed', activeTag === tag ? 'true' : 'false');
+    btn.innerHTML = '';
+    btn.append(label);
+    const c = document.createElement('span');
+    c.className = 'tag-count';
+    c.textContent = count;
+    btn.appendChild(c);
+    if (count === 0 && activeTag !== tag) btn.disabled = true;
+    btn.addEventListener('click', () => setTag(tag === null || activeTag === tag ? null : tag));
     container.appendChild(btn);
-  });
+  };
+
+  makeBtn('All', null, base.length);
+  allTags.forEach(tag => makeBtn(tag, tag, base.filter(w => (w.tags || []).includes(tag)).length));
+}
+
+function sortWorks(works) {
+  const dir = sortOrder === 'old' ? 1 : -1;
+  // 日付は「YYYY-MM」なので、同じ月の中は登録番号（id）で並べる
+  return works.slice().sort((a, b) =>
+    (String(a.date).localeCompare(String(b.date)) || (a.id - b.id)) * dir
+  );
 }
 
 function renderGallery() {
+  writeStateToUrl();
+  renderTagButtons();
+
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = '';
 
-  const filtered = allWorks.filter(w => {
+  const filtered = sortWorks(allWorks.filter(w => {
     if (!w.published) return false;
-    if (activeTag && !w.tags.includes(activeTag)) return false;
-    if (activeType && w.type !== activeType) return false;
+    if (activeTag && !(w.tags || []).includes(activeTag)) return false;
+    if (!matchesType(w, activeType)) return false;
     return true;
-  });
+  }));
 
   const countEl = document.getElementById('works-count');
   countEl.textContent = `${filtered.length} entries`;
 
   if (filtered.length === 0) {
-    gallery.innerHTML = '<p class="no-results">該当する作品がありません</p>';
+    const empty = document.createElement('div');
+    empty.className = 'no-results';
+    empty.innerHTML = '<p>該当する作品がありません</p>';
+    const reset = document.createElement('button');
+    reset.type = 'button';
+    reset.className = 'reset-btn';
+    reset.textContent = '絞り込みを解除する';
+    reset.addEventListener('click', () => {
+      activeTag = null;
+      activeType = '';
+      document.querySelectorAll('.type-btn').forEach(b => b.classList.toggle('active', b.dataset.type === ''));
+      renderGallery();
+    });
+    empty.appendChild(reset);
+    gallery.appendChild(empty);
     return;
   }
 
-  filtered.forEach((work, i) => {
-    gallery.appendChild(createCard(work, i + 1));
+  filtered.forEach(work => {
+    gallery.appendChild(createCard(work));
   });
 }
 
-function createCard(work, index) {
+// 一覧用の軽い画像（tools/make_card_images.py で作成）のパス
+function cardImagePath(src) {
+  const file = src.split('/').pop();
+  return 'images/cards/' + file.replace(/\.[^.]+$/, '') + '.webp';
+}
+
+function createCard(work) {
   const card = document.createElement('div');
   card.className = 'card';
 
@@ -101,9 +160,17 @@ function createCard(work, index) {
     : (work.thumbnail || '');
   if (src) {
     const img = document.createElement('img');
-    img.src = src;
     img.alt = work.title;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.src = cardImagePath(src);
     img.onerror = () => {
+      // 軽い画像がまだ無いときは元画像を表示する
+      if (!img.dataset.fallback) {
+        img.dataset.fallback = '1';
+        img.src = src;
+        return;
+      }
       thumb.innerHTML = `<div class="card-thumb-placeholder">${work.type === 'html' ? 'HTMLサイト' : work.type === 'slide' ? 'スライド' : '画像なし'}</div>`;
       badge.remove();
     };
@@ -130,7 +197,7 @@ function createCard(work, index) {
 
   const metaRow = document.createElement('div');
   metaRow.className = 'card-meta-row';
-  metaRow.innerHTML = `<span class="card-date">${work.date}</span><span class="card-id">ID: W${index}</span>`;
+  metaRow.innerHTML = `<span class="card-date">${work.date}</span><span class="card-id">ID: W${work.id}</span>`;
 
   const titleEl = document.createElement('div');
   titleEl.className = 'card-title';
@@ -164,9 +231,16 @@ function createCard(work, index) {
   const tagsVal = document.createElement('div');
   tagsVal.className = 'card-tags';
   (work.tags || []).forEach(tag => {
-    const t = document.createElement('span');
+    // カード内のタグを押すと、そのタグで絞り込む
+    const t = document.createElement('button');
+    t.type = 'button';
     t.className = 'card-tag';
     t.textContent = tag;
+    t.title = `「${tag}」で絞り込む`;
+    t.addEventListener('click', () => {
+      setTag(tag);
+      document.getElementById('works').scrollIntoView({ behavior: 'smooth' });
+    });
     tagsVal.appendChild(t);
   });
   tagsRow.appendChild(tagsLabel);
@@ -300,6 +374,12 @@ document.querySelectorAll('.type-btn').forEach(btn => {
     btn.classList.add('active');
     renderGallery();
   });
+});
+
+// Sort
+document.getElementById('sort-select').addEventListener('change', e => {
+  sortOrder = e.target.value;
+  renderGallery();
 });
 
 loadData();
