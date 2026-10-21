@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>べちこのAIアウトプット集</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-inner">
     <div class="header-logo">
-      <img class="avatar" src="images/avatar.png" alt="Bechiko">
+      <img class="avatar" src="images/avatar.png" alt="Bechiko" width="36" height="36">
       <div class="header-name">
         <span class="name">Bechiko</span>
         <span class="subtitle">AI Output Archive</span>
@@ -68,18 +68,30 @@
       <h2 class="works-title">Works</h2>
       <span class="works-count" id="works-count"></span>
     </div>
-    <div class="type-filter">
-      <button class="type-btn active" data-type="">すべて</button>
-      <button class="type-btn" data-type="image">画像</button>
-      <button class="type-btn" data-type="html">HTMLサイト</button>
-      <button class="type-btn" data-type="slide">スライド</button>
+    <div class="works-controls">
+      <div class="type-filter">
+        <button class="type-btn active" data-type="">すべて</button>
+        <button class="type-btn" data-type="image">画像</button>
+        <button class="type-btn" data-type="html">HTMLサイト</button>
+        <button class="type-btn" data-type="slide">スライド</button>
+      </div>
+      <label class="sort-control">
+        <span class="sort-label">並び順</span>
+        <select id="sort-select">
+          <option value="new">新しい順</option>
+          <option value="old">古い順</option>
+        </select>
+      </label>
     </div>
   </div>
 
-  <div class="tags-row">
-    <span class="tags-label">TAGS</span>
-    <div id="tag-filters"></div>
+  <div class="search-row">
+    <input type="search" id="search-input" class="search-input"
+      placeholder="キーワードで探す（例：ループ図、算数）"
+      aria-label="キーワードで作品を探す" autocomplete="off" enterkeyhint="search">
   </div>
+
+  <div class="tag-groups" id="tag-filters"></div>
 
   <div class="gallery" id="gallery"></div>
 </section>
@@ -88,7 +100,7 @@
   <div class="footer-inner">
     <div class="footer-left">
       <div class="footer-logo">
-        <img class="avatar avatar-sm" src="images/avatar.png" alt="Bechiko">
+        <img class="avatar avatar-sm" src="images/avatar.png" alt="Bechiko" width="28" height="28" loading="lazy">
         <span>Bechiko · AI Output Archive</span>
       </div>
       <p class="footer-copy">© 2026 Bechiko. All works are personal AI experiments.</p>
@@ -108,6 +120,6 @@
   <div class="modal-counter" id="modal-counter"></div>
 </div>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>

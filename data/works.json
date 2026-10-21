@@ -23,7 +23,8 @@
     "prompt": "ChatGPTにSharePointを使ったCS調査送付先管理について相談している中で、整理のために画像化してもらったもの。特定のプロンプトはなし。",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work",
+      "Microsoft"
     ],
     "published": true
   },
@@ -39,7 +40,7 @@
     "tags": [
       "Claude Design",
       "ディープリサーチ",
-      "work"
+      "Work"
     ],
     "published": true
   },
@@ -53,7 +54,7 @@
     "prompt": "新人プロジェクトリーダーの面談ログについてChatGPTとやりとりしたのちに「ここまで話したことを1枚の画像にインフォグラフィック形式でまとめてください」と依頼して作成。",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work"
     ],
     "published": true
   },
@@ -82,7 +83,8 @@
     "prompt": "小学生の娘が、確率の問題を宿題でやりたいそうです。小学生にもわかるような説明と問題4問くらいを作成してください。縦で印刷におさまるように、プリント用紙の画像を作成してください。ノートにはります。問題は、答は入れずに問題文だけにして、「式」「答え」を書く欄も入れて。",
     "tags": [
       "ChatGPT",
-      "Family"
+      "Family",
+      "子どもの学習"
     ],
     "published": true
   },
@@ -98,7 +100,7 @@
     "tags": [
       "Claude Design",
       "フロー図",
-      "work"
+      "Work"
     ],
     "published": true
   },
@@ -112,7 +114,8 @@
     "prompt": "①ChatGPT：勉強を楽しくなる方法を考えて。前に買ったドリルを終わらせたいけど、長くてなかなか終わらないです。小学校4年生の相談として答えてください。\n②NotebookLM：一度イラスト作成後「登場人物を女の子にしてインフォグラフィック形式のスライドを作ってください。」",
     "tags": [
       "NotebookLM",
-      "Family"
+      "Family",
+      "子どもの学習"
     ],
     "published": true
   },
@@ -155,7 +158,8 @@
     "prompt": "①4毒を使わないで作るバンサンスー\n②レシピを画像で作成して",
     "tags": [
       "ChatGPT",
-      "Family"
+      "Family",
+      "レシピ"
     ],
     "published": true
   },
@@ -169,7 +173,8 @@
     "prompt": "①レシピを手入力②レシピを画像で作成して",
     "tags": [
       "ChatGPT",
-      "Family"
+      "Family",
+      "レシピ"
     ],
     "published": true
   },
@@ -183,7 +188,8 @@
     "prompt": "①レシピをChatGPTと壁打ち②レシピを画像にして",
     "tags": [
       "ChatGPT",
-      "Family"
+      "Family",
+      "レシピ"
     ],
     "published": true
   },
@@ -197,7 +203,8 @@
     "prompt": "①MicrosoftのPowerAppsの見た目を良くするコツってありますか②ポイントをグラレコ風に画像にまとめて",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work",
+      "Microsoft"
     ],
     "published": true
   },
@@ -211,7 +218,8 @@
     "prompt": "ChatGPTとGeminiでCopilotについてディープリサーチ。ChatGPTにて構成を相談したうえでグラレコ風にまとめてもらう",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work",
+      "Microsoft"
     ],
     "published": true
   },
@@ -225,7 +233,8 @@
     "prompt": "①レシピをChatGPTと壁打ち②レシピを画像にして",
     "tags": [
       "ChatGPT",
-      "Family"
+      "Family",
+      "レシピ"
     ],
     "published": true
   },
@@ -246,7 +255,8 @@
     "prompt": "ChatGPTとGeminiでディープリサーチしたあとに、ChatGPTで構成案を壁打ちしたあとにグラレコ風に画像作成。",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work",
+      "Microsoft"
     ],
     "published": true
   },
@@ -277,7 +287,9 @@
     "memo": "小学5年生の娘が都道府県名を覚えるためのクイズアプリ。白地図でハイライトされた県を4択で当てる。3問・10問・20問・47問から選択可。沖縄は左上インセット表示。Claude Codeで設計から実装・GitHub Pages公開まで完全生成。",
     "tags": [
       "Claude Code",
-      "Family"
+      "Family",
+      "子どもの学習",
+      "アプリ・ゲーム"
     ],
     "published": true
   },
@@ -293,7 +305,9 @@
     "tags": [
       "Claude Code",
       "ChatGPT",
-      "Family"
+      "Family",
+      "子どもの学習",
+      "アプリ・ゲーム"
     ],
     "published": true
   },
@@ -307,7 +321,8 @@
     "url": "https://sanny114.github.io/100challenge/",
     "memo": "テクフロのLT会共有のためリサーチしたうえでHTML化。",
     "tags": [
-      "ChatGPT"
+      "ChatGPT",
+      "登壇・勉強会"
     ],
     "published": true
   },
@@ -321,7 +336,8 @@
     "url": "https://sanny114.github.io/github.io/",
     "memo": "DXroom登壇のためリサーチしたうえでHTML化。",
     "tags": [
-      "ChatGPT"
+      "ChatGPT",
+      "登壇・勉強会"
     ],
     "published": true
   },
@@ -335,7 +351,8 @@
     "url": "https://sanny114.github.io/20250406DXroom/",
     "memo": "DXroom登壇のためリサーチしたうえでスライド化。",
     "tags": [
-      "ChatGPT"
+      "ChatGPT",
+      "登壇・勉強会"
     ],
     "published": true
   },
@@ -378,7 +395,8 @@
     "prompt": "①本部長への数字の説明責任がミドルになっていまっていることについて、システム思考でループ図をかいてみました。ここから読み取れることを文章にしてください。②この関係者たちにはどんなメンタルモデルがある？③構造とメンタルモデルをまとめてイラストにして",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work",
+      "ループ図"
     ],
     "published": true
   },
@@ -392,7 +410,7 @@
     "prompt": "これまでの私との会話から、私を主人公にした映画のタイトル・キャッチコピー・ジャンル・あらすじ・上映ポスターの雰囲気を作ってください。商業映画レベルで。",
     "tags": [
       "ChatGPT",
-      "work"
+      "Career"
     ],
     "published": true
   },
@@ -406,7 +424,8 @@
     "prompt": "①別アプリで作成したループ図を添付して解説してもらう②イラストにする",
     "tags": [
       "ChatGPT",
-      "Family"
+      "Family",
+      "ループ図"
     ],
     "published": true
   },
@@ -420,7 +439,8 @@
     "prompt": "これをグラレコ風のイラストにして\nなぜ勉強しないといけないのか？ なんで勉強なんかしないといけないの？という子どもの質問に 母は、机にコップを置いて答えた。 「算数」を学べば この中に200mlの水があると 数字で\"見える\"ようになる。 「理科」を学べば この水は水素と酸素からできている事が知れる。 「社会」を学べば この水がどこからきたのか？がわかり そして、世界にはこの綺麗な水を、 飲む事ができない人たちがいることを知れる。 「美術」を学べば この水の反射を綺麗に描く事ができるようになる。 「音楽」を学べば 同じコップでも水の量で音を変えれることにも気づける。 「技術」を学べば このコップがどんな素材でなぜ漏れないのかがわかる。 「保健体育」を学べば この水が体にどれだけ大切なのか健康を支える命の正体が見えてくる。 「道徳」を学べば この水を誰かと分け合うことの大切さを学べて、思いやりの心が育つ。 「国語」を学べば 今私が話した\"全部の意味\"を\"正しく\"理解できるようになる。 「英語」を学べば この話を世界の人と分かち合えるようになる。 「哲学」を学べば この話に何の意味があるのか考えれるようになる。",
     "tags": [
       "ChatGPT",
-      "Family"
+      "Family",
+      "子どもの学習"
     ],
     "published": true
   },
@@ -440,7 +460,8 @@
     "prompt": "メルマガを元に解説＆イラスト化",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work",
+      "記事・メルマガ解説"
     ],
     "published": true
   },
@@ -469,7 +490,9 @@
     "memo": "小学5年生の娘が算数の文章問題でかけ算・わり算の判断に迷うという課題から開発。文章題を読んで使う計算を当てる10問構成のトレーニングアプリ。Claude Designでデザイン方針を検討し、Claude Codeで実装。CodeXで生成したネコのマスコットや紙工作風のイラスト素材を組み込み、GitHub Pagesで公開。",
     "tags": [
       "Claude Code",
-      "Family"
+      "Family",
+      "子どもの学習",
+      "アプリ・ゲーム"
     ],
     "published": true
   },
@@ -483,7 +506,8 @@
     "url": "https://sanny114.github.io/fish/",
     "memo": "魚の群れの動きをシミュレーションするインタラクティブなページ。魚の数・群れの中心へ向かう傾向・離れる傾向・方向揃えなどのパラメータを調整できる。ChatGPTで作成してGitHub Pagesで公開。",
     "tags": [
-      "ChatGPT"
+      "ChatGPT",
+      "アプリ・ゲーム"
     ],
     "published": true
   },
@@ -498,7 +522,8 @@
     "memo": "Claude Codeで制作したブラウザゲーム。3つのワールド（地上・地下・雲の上）を冒険し、コイン全取得＆敵全滅でクリア。スマホのタッチ操作対応。",
     "tags": [
       "Claude Code",
-      "Family"
+      "Family",
+      "アプリ・ゲーム"
     ],
     "published": true
   },
@@ -513,7 +538,8 @@
     "memo": "娘が途中まで作っていたHTML/CSS/JSのねこ育成ゲームを引き継いで完成。お世話・レベル・図鑑・遊び道具などのゲームロジックを実装し、プレイフィードバックを反映しながら改善。タブレット・PC向けのレスポンシブレイアウトも追加してGitHub Pagesで公開。",
     "tags": [
       "Claude Code",
-      "Family"
+      "Family",
+      "アプリ・ゲーム"
     ],
     "published": true
   },
@@ -527,7 +553,8 @@
     "prompt": "①中島聡さんのメルマガ記事を読んで内容を整理してもらう。②グラレコ風のインフォグラフィックにまとめて。",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work",
+      "記事・メルマガ解説"
     ],
     "published": true
   },
@@ -541,7 +568,7 @@
     "prompt": "①上司とのすれ違いの経緯をChatGPTに相談。②ここまで話したことを1枚の画像にインフォグラフィック形式でまとめて。",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work"
     ],
     "published": true
   },
@@ -555,7 +582,8 @@
     "prompt": "①同じ状況をシステム思考でループ図にしてもらう。②悪循環と好循環を対比したイラストにして。",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work",
+      "ループ図"
     ],
     "published": true
   },
@@ -569,7 +597,8 @@
     "prompt": "①同僚との関係をシステム思考のループ図で整理。②関係者のメンタルモデルとあわせてイラストにして。",
     "tags": [
       "ChatGPT",
-      "work"
+      "Work",
+      "ループ図"
     ],
     "published": true
   },
@@ -599,7 +628,8 @@
     "memo": "サロン向けAI勉強会 中級編 第2回の冒頭で流す10秒のオープニング映像。回のテーマ「見た目は、丸投げしていい」を、メモ書きを丸めて放り投げるとデザインされた姿で返ってくる動きにした。120 BPMの音ハメとキネティックタイポグラフィ。ショーリールで作ったmotion-videoスキル（絵コンテ→静止画確認→書き出し）で制作。GitHub Pagesで公開。",
     "tags": [
       "Claude Code",
-      "Motion"
+      "Motion",
+      "登壇・勉強会"
     ],
     "published": true
   },
@@ -630,7 +660,8 @@
     "tags": [
       "Claude Code",
       "Family",
-      "Motion"
+      "Motion",
+      "子どもの学習"
     ],
     "published": true
   },
@@ -646,7 +677,8 @@
     "tags": [
       "Claude Code",
       "Family",
-      "Motion"
+      "Motion",
+      "子どもの学習"
     ],
     "published": true
   },
@@ -663,7 +695,8 @@
       "Claude Code",
       "Gemini",
       "Family",
-      "Motion"
+      "Motion",
+      "子どもの学習"
     ],
     "published": true
   },
@@ -676,7 +709,8 @@
     "image": "images/generated/ChatGPT_GoogleWorkspace×Claude_20261010.png",
     "prompt": "記事を調査してイラスト化しました。",
     "tags": [
-      "ChatGPT"
+      "ChatGPT",
+      "記事・メルマガ解説"
     ],
     "published": true
   },
@@ -691,7 +725,10 @@
     "memo": "いま起きていることと関係していそうな要素を書き出すと、AIが質問しながら因果ループ図に整理してくれるツール。「書き出す→問い直す→図にする→直す」の4ステップで進む。claude.aiのアーティファクトで作成し、公開リンクで共有。",
     "tags": [
       "フロー図",
-      "work"
+      "Work",
+      "ループ図",
+      "アプリ・ゲーム",
+      "Claude"
     ],
     "published": true
   }
