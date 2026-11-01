@@ -731,5 +731,98 @@
       "Claude"
     ],
     "published": true
+  },
+  {
+    "id": 48,
+    "type": "image",
+    "title": "豚バラとニラの甘辛醤油炒め（レシピ図解）",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-11",
+    "image": "images/generated/ChatGPT_butanira_20261101.png",
+    "prompt": "ChatGPTの音声モードで会話しながらレシピをまとめ、そのまま1枚のレシピ図解にしました。",
+    "tags": [
+      "ChatGPT",
+      "Family"
+    ],
+    "published": true
+  },
+  {
+    "id": 49,
+    "type": "image",
+    "title": "ヘルシオでふっくらハンバーグ（レシピ図解）",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-11",
+    "image": "images/generated/ChatGPT_hambarg_20261101.png",
+    "prompt": "ChatGPTの音声モードで会話しながらレシピをまとめ、そのまま1枚のレシピ図解にしました。",
+    "tags": [
+      "ChatGPT",
+      "Family"
+    ],
+    "published": true
+  },
+  {
+    "id": 50,
+    "type": "image",
+    "title": "こぐまの春支度と花の目覚まし",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-10",
+    "image": "images/generated/ChatGPT_こぐまの春支度と花の目覚まし_20261018.png",
+    "prompt": "イラスト作成用のGPTsをスキルに置き換えたときの試作として作りました。",
+    "tags": [
+      "ChatGPT"
+    ],
+    "published": true
+  },
+  {
+    "id": 51,
+    "type": "image",
+    "title": "シマエナガのふわふわパン屋さん",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-10",
+    "image": "images/generated/ChatGPT_シマエナガのふわふわパン屋さん_20261018.png",
+    "prompt": "イラスト作成用のGPTsをスキルに置き換えたときの試作として作りました。",
+    "tags": [
+      "ChatGPT"
+    ],
+    "published": true
+  },
+  {
+    "id": 52,
+    "type": "image",
+    "title": "三日月で星を釣るペンギン",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-10",
+    "image": "images/generated/ChatGPT_三日月で星を釣るペンギン_20261018.png",
+    "prompt": "イラスト作成用のGPTsをスキルに置き換えたときの試作として作りました。",
+    "tags": [
+      "ChatGPT"
+    ],
+    "published": true
+  },
+  {
+    "id": 53,
+    "type": "image",
+    "title": "大きな葉の下のカワウソ茶会",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-10",
+    "image": "images/generated/ChatGPT_大きな葉の下のカワウソ茶会_20261018.png",
+    "prompt": "イラスト作成用のGPTsをスキルに置き換えたときの試作として作りました。",
+    "tags": [
+      "ChatGPT"
+    ],
+    "published": true
+  },
+  {
+    "id": 54,
+    "type": "image",
+    "title": "雲を干すうさぎたち",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-10",
+    "image": "images/generated/ChatGPT_雲を干すうさぎたち_20261018.png",
+    "prompt": "イラスト作成用のGPTsをスキルに置き換えたときの試作として作りました。",
+    "tags": [
+      "ChatGPT"
+    ],
+    "published": true
   }
 ]
