@@ -826,5 +826,20 @@
       "ChatGPT"
     ],
     "published": true
+  },
+  {
+    "id": 55,
+    "type": "html",
+    "title": "Fable 5.2 紹介リール（40秒モーショングラフィックス）",
+    "tool": "Claude Code",
+    "date": "2026-11",
+    "thumbnail": "images/thumbnails/fable52-reel.jpg",
+    "url": "https://sanny114.github.io/fable52-reel/",
+    "memo": "「Fable 5.2の魅力を最大限発揮するような動画作成して」の一行から制作。9万個の光の粒が、渦・波・設計図・グラフ・文章・絵へと途切れずに姿を変え、最後にロゴへ集まる40秒。素材は使わず、映像も音楽もPythonのプログラム1本で生成（全1,200コマの描画は約2分）。GitHub Pagesで公開。",
+    "tags": [
+      "Claude Code",
+      "Motion"
+    ],
+    "published": true
   }
 ]
