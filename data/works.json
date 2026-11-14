@@ -841,5 +841,20 @@
       "Motion"
     ],
     "published": true
+  },
+  {
+    "id": 56,
+    "type": "image",
+    "title": "週刊Life is beautiful 2026年6月23日号",
+    "tool": "ChatGPT (GPT-image-2)",
+    "date": "2026-11",
+    "image": "images/generated/ChatGPT_nakajimasatoshi_20260623.png",
+    "prompt": "①中島聡さんのメルマガ記事（Satya Nadella「A frontier without an ecosystem is not stable」）を読んで内容を整理してもらう。②グラレコ風のインフォグラフィックにまとめて。",
+    "tags": [
+      "ChatGPT",
+      "Work",
+      "記事・メルマガ解説"
+    ],
+    "published": true
   }
 ]
