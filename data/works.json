@@ -862,12 +862,17 @@
   },
   {
     "id": 57,
-    "type": "image",
+    "type": "gallery",
     "title": "週刊Life is beautiful 2026年6月30日号",
     "tool": "ChatGPT (GPT-image-2)",
     "date": "2026-11",
-    "image": "images/generated/ChatGPT_nakajimasatoshi_20260630.png",
-    "prompt": "①中島聡さんのメルマガ記事（熱力学の観点から見た知性）を読んで内容を整理してもらう。②グラレコ風のインフォグラフィックにまとめて。",
+    "images": [
+      "images/generated/ChatGPT_nakajimasatoshi_20260630.png",
+      "images/generated/ChatGPT_nakajimasatoshi_20260630_4.png",
+      "images/generated/ChatGPT_nakajimasatoshi_20260630_2.png",
+      "images/generated/ChatGPT_nakajimasatoshi_20260630_3.png"
+    ],
+    "prompt": "①中島聡さんのメルマガ記事（1枚目：熱力学の観点から見た知性、2枚目：紹介された論文「Thermodynamic Measure of Intelligence」の論理の流れ、3枚目：活け締めをロボットで自動化するShinkei Systems、4枚目：0.6秒で3Dプリントする清華大学のDISH）を読んで内容を整理してもらう。②グラレコ風のインフォグラフィックにまとめて。",
     "tags": [
       "ChatGPT",
       "Work",
