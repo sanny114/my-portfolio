@@ -895,5 +895,28 @@
       "登壇・勉強会"
     ],
     "published": true
+  },
+  {
+    "id": 59,
+    "type": "gallery",
+    "title": "週刊Life is beautiful 2026年7月7日号",
+    "tool": "Claude Code + Codex CLI (GPT-image-2)",
+    "date": "2026-11",
+    "images": [
+      "images/generated/Codex_nakajimasatoshi_20260707_1.png",
+      "images/generated/Codex_nakajimasatoshi_20260707_2.png",
+      "images/generated/Codex_nakajimasatoshi_20260707_3.png",
+      "images/generated/Codex_nakajimasatoshi_20260707_4.png",
+      "images/generated/Codex_nakajimasatoshi_20260707_5.png",
+      "images/generated/Codex_nakajimasatoshi_20260707_6.png"
+    ],
+    "prompt": "中島聡さんのメルマガ記事（1枚目：MulmoClaudeとは何か？、2枚目：カスタムAIチップの最前線、3枚目：Why Token Optimization Is a Gift、4枚目：メルカリはなぜ「8割納得の制度」を捨てた？、5枚目：Agentic GTM is here. Your data isn't ready for it.、6枚目：Dan Koe「how to unlock extreme focus on command」）を読んで、ホワイトボード風の解説イラストに。最初は記事を4枚に分けた多色の図だったが、「1枚にまとめたい」「この記事をどんな立ち位置で読むか（WHY）と、何がわかるか（So WHAT）を入れたい」「色が多くて目が散る」とやりとりしながら直し、紺＋黄色マーカーの2色・1枚まとめの形に落ち着いた。この流れをClaude Codeのスキル（article-whiteboard-summary）にして、記事を貼るだけで同じ形の図とノートができるようにした。画像生成はCodex CLI経由のGPT-image-2。",
+    "tags": [
+      "Claude Code",
+      "ChatGPT",
+      "Work",
+      "記事・メルマガ解説"
+    ],
+    "published": true
   }
 ]
