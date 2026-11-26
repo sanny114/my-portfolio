@@ -934,5 +934,21 @@
       "登壇・勉強会"
     ],
     "published": true
+  },
+  {
+    "id": 61,
+    "type": "html",
+    "title": "AI雑談会「この2週間のAIニュース」（42秒モーショングラフィックス）",
+    "tool": "Claude Code",
+    "date": "2026-11",
+    "thumbnail": "images/thumbnails/ai-news-20261114.jpg",
+    "url": "https://sanny114.github.io/ai-news-20261114/",
+    "memo": "主催しているAI雑談会（ざっくばらんAIトーーク）に向けて、11/1〜11/14のAIニュース6本を1本6秒ずつ図解した42秒の映像。1本の型は「番号と日付→図解の動き→見出しを読ませる静止」で、切り替え方はズームスルー・ワイプ・アイリスなど毎回変えた。制作時点で確かめきれていなかった2本には「要確認」の札を付けた。120 BPMの音ハメ。motion-videoスキルで絵コンテ→静止画確認→書き出しの順に進め、効果音はPythonで合成。GitHub Pagesで公開。",
+    "tags": [
+      "Claude Code",
+      "Motion",
+      "発信・勉強会"
+    ],
+    "published": true
   }
 ]
