@@ -950,5 +950,21 @@
       "発信・勉強会"
     ],
     "published": true
+  },
+  {
+    "id": 62,
+    "type": "html",
+    "title": "AI勉強会 再開催 第5回＋中級編 第1回「ブラウザ×Claude Cowork」（30秒モーショングラフィックス）",
+    "tool": "Claude Code",
+    "date": "2026-11",
+    "thumbnail": "images/thumbnails/browser-cowork-opening.jpg",
+    "url": "https://sanny114.github.io/browser-cowork-opening/",
+    "memo": "サロン向けAI勉強会 第5回＋中級編 第1回（再開催）の趣旨「AIの手が、Webとパソコンの中まで届くようになった」を表した30秒の映像。第1回＋第2回、第3回＋第4回の映像と同じく、スライドはなぞらず、回の趣旨を1つの比喩にした。これまでは離れた窓と窓の間を自分のカーソルがコピーして運んでいたが、黄色い一文を送ると黄色い点（AIの手）が伸び、Webのページ→表→フォルダ→フォームを1本の線でつなぐ。冒頭の離れた3つの窓と、最後に引いた画面の窓は同じ配置。点は送信ボタンの手前で止まる。120 BPMの音ハメ。motion-videoスキルで絵コンテ→静止画確認→書き出しの順に進め、効果音もPythonで合成。GitHub Pagesで公開。",
+    "tags": [
+      "Claude Code",
+      "Motion",
+      "登壇・勉強会"
+    ],
+    "published": true
   }
 ]
