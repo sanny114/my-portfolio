@@ -982,5 +982,21 @@
       "記事・メルマガ解説"
     ],
     "published": true
+  },
+  {
+    "id": 64,
+    "type": "image",
+    "title": "週刊Life is beautiful 2026年7月21日号「AI for Enterprise Finance & How to Do It Right」",
+    "tool": "Claude Code + Codex CLI (GPT-image-2)",
+    "date": "2026-11",
+    "image": "images/generated/Codex_nakajimasatoshi_20260721.png",
+    "prompt": "中島聡さんのメルマガ記事「AI for Enterprise Finance & How to Do It Right」を貼り付けて、article-whiteboard-summaryスキルでホワイトボード風の1枚まとめに。財務部門のAI導入でよくある2つの失敗、成功の鍵になる「勝手に働くバックグラウンド・エージェント」、そして「85%は普通のコード、15%だけAI」という作り方を3列で整理した。「社内でAI導入を進める立場から、配って終わりにしない設計図として読む」という読む視点と、So WHAT（読み）3点を添えている。紺＋黄色マーカーの2色。画像生成はCodex CLI経由のGPT-image-2。",
+    "tags": [
+      "Claude Code",
+      "ChatGPT",
+      "Work",
+      "記事・メルマガ解説"
+    ],
+    "published": true
   }
 ]
