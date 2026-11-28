@@ -1014,5 +1014,21 @@
       "記事・メルマガ解説"
     ],
     "published": true
+  },
+  {
+    "id": 66,
+    "type": "image",
+    "title": "週刊Life is beautiful 2026年7月21日号「先端半導体製造の黒衣（くろこ）は平均74歳」",
+    "tool": "Claude Code + Codex CLI (GPT-image-2)",
+    "date": "2026-11",
+    "image": "images/generated/Codex_nakajimasatoshi_20260721_3.png",
+    "prompt": "中島聡さんのメルマガで紹介された毎日新聞の記事「先端半導体製造の黒衣（くろこ）は平均74歳」を貼り付けて、article-whiteboard-summaryスキルでホワイトボード風の1枚まとめに。熊本のTSMC工場が使う地下水、それを冬の田んぼに水を張って補う湛水事業、そして担い手の農家が平均74歳で第2工場では取水が3倍超になる見込みという構図を、3列で整理した。「AIを足元で支える水と人の話として読む」という読む視点と、So WHAT（読み）3点を添えている。紺＋黄色マーカーの2色。画像生成はCodex CLI経由のGPT-image-2。",
+    "tags": [
+      "Claude Code",
+      "ChatGPT",
+      "Work",
+      "記事・メルマガ解説"
+    ],
+    "published": true
   }
 ]
