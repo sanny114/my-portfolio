@@ -998,5 +998,21 @@
       "記事・メルマガ解説"
     ],
     "published": true
+  },
+  {
+    "id": 65,
+    "type": "image",
+    "title": "週刊Life is beautiful 2026年7月21日号「AI 2040: Plan A」",
+    "tool": "Claude Code + Codex CLI (GPT-image-2)",
+    "date": "2026-11",
+    "image": "images/generated/Codex_nakajimasatoshi_20260721_2.png",
+    "prompt": "中島聡さんのメルマガ記事「AI 2040: Plan A」を貼り付けて、article-whiteboard-summaryスキルでホワイトボード風の1枚まとめに。前作「AI 2027」との違い、国際合意で超知能の開発を意図的に遅らせるPlan Aの年表（2027→2040）と計画の柱、そして「知能の爆発は避けられないので、どうコントロールするかを今のうちに準備するほうが現実的」という中島さんの見方を3列で並べた。「止める案と止まらない見方を比べ、何に備えるかを考える材料として読む」という読む視点と、So WHAT（読み）3点を添えている。紺＋黄色マーカーの2色。画像生成はCodex CLI経由のGPT-image-2。",
+    "tags": [
+      "Claude Code",
+      "ChatGPT",
+      "Work",
+      "記事・メルマガ解説"
+    ],
+    "published": true
   }
 ]
