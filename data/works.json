@@ -966,5 +966,21 @@
       "登壇・勉強会"
     ],
     "published": true
+  },
+  {
+    "id": 63,
+    "type": "image",
+    "title": "週刊Life is beautiful「AI時代の働き方」",
+    "tool": "Claude Code + Codex CLI (GPT-image-2)",
+    "date": "2026-11",
+    "image": "images/generated/Codex_nakajimasatoshi_ai_era_work_style.png",
+    "prompt": "中島聡さんのメルマガ記事「AI時代の働き方」を貼り付けて、article-whiteboard-summaryスキルでホワイトボード風の1枚まとめに。チャットで質問するだけの段階から、壁打ち・NotebookLM・Canvas/Artifact、そして最初の関門であるClaude Code＋Git＋GitHubへと進む流れを、階段状の3列で整理した。「チャット止まりの人を、次の段へ連れていく道筋として読む」という読む視点と、So WHAT（読み）3点を添えている。紺＋黄色マーカーの2色。画像生成はCodex CLI経由のGPT-image-2。",
+    "tags": [
+      "Claude Code",
+      "ChatGPT",
+      "Work",
+      "記事・メルマガ解説"
+    ],
+    "published": true
   }
 ]
